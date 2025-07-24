@@ -275,3 +275,220 @@ footer p{
     padding: 20px;
     margin: 0px;
 }
+
+/*fixture*/
+.partido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 60px 80px;
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.equipo {
+  text-align: center;
+  width: 150px;
+}
+
+.equipo img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.info {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 27px;
+  padding-bottom: 15px;
+}
+
+.info p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.nombreEquipo {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.portada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Ocupa toda la altura de la ventana */
+  height: 100vh; 
+  width: 100%;
+  /* Oculta lo que sobresalga */
+  overflow: hidden;
+}
+.portada img {
+    width: 100%;
+    height: 100%;
+    /* La imagen se ajusta sin deformarse */
+    object-fit: cover; 
+  }
+
+  .FondoPartidos {
+    background-image: url(images/Logos/hinchada.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 20px;
+  }
+
+
+.contenedorCentral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.lado img {
+  width: 400px;
+  padding: auto;
+  height: auto;
+}
+
+.contenidoCentro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.partido1,
+.partidoInfo1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  min-height: 250px; /* Asegura altura mínima */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin: 0 auto 20px auto;
+  padding: 40px 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.partidoInfo1 p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.blog {
+    padding: 30px 20px 100px 20px;
+}
+
+.blog-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.blog-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: calc(25% - 20px); /* 4 columnas ahora */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    min-height: 500px; /* fuerza igual altura para todos */
+}
+
+.blog-txt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+     text-align: justify;
+}
+
+.blog-txt h3 {
+    font-family: 'Times New Roman';
+    color: #4E4B5076;
+    font-size: 28px;
+    margin-bottom: 25px;
+
+}
+
+.blog-1 img {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.conteniendo {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    max-width: 1700px;
+    margin: 20px auto;
+    width: 90%;
+    height: 60vh;
+    background: white; 
+    padding-top: 1px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-top: 80px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.historia{
+    width: 50%;
+    padding: 30px;
+    text-align: center;
+}
+
+.historia h1 {
+    font-size: 50px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    text-align: center;
+     margin-bottom: 10px;
+}
+
+.historia p {
+    font-size: 20px;
+    margin-top: 0;
+    text-align: justify;
+
+}
+
+.imagenR {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.colo{
+    background-color: #c7f2ff;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
