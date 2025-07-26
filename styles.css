@@ -7,6 +7,54 @@ header{
     background-image: url(images/hinchada-cristal-opaco.jpg);
     background-size: cover;
 }
+.menu{
+    background-color: rgba(60, 190, 239, 0.8);
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 5px 0px;
+    margin: 0px;
+}
+.menu a{
+    text-decoration: none;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+}
+.menu img{
+    display: block;
+}
+.submenu{
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #D42A2A;
+    border-radius: 5px;
+    width: 150px;
+    padding: 3px;
+}
+.submenu li{
+    padding: 5px 0px;
+}
+.submenu a{
+    padding: 5px;
+}
+.menu>li>a:hover{
+    color: #F0D145;
+}
+.menu li:hover .submenu{
+    display: block;
+}
+.menu img:hover{
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+.submenu li:hover{
+    background-color: rgba(60, 190, 239, 0.9);
+    border-radius: 5px;
+}
 
 
 
@@ -106,76 +154,6 @@ header{
     margin-right: 10px;
     color: #5E17EB ;
 }
-.menu{
-    background-color: rgba(60, 190, 239, 0.8);
-    width: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    padding: 5px 0px;
-    margin: 0px;
-}
-.menu a{
-    text-decoration: none;
-    font-family: 'Dosis', sans-serif;
-    color: white;
-}
-.menu img{
-    display: block;
-}
-.submenu{
-    position: absolute;
-    display: none;
-    list-style: none;
-    background-color: #D42A2A;
-    border-radius: 5px;
-    width: 150px;
-    padding: 3px;
-}
-.submenu li{
-    padding: 5px 0px;
-}
-.submenu a{
-    padding: 5px;
-}
-.menu>li>a:hover{
-    color: #F0D145;
-}
-.menu li:hover .submenu{
-    display: block;
-}
-.menu img:hover{
-    opacity: 0.85;
-    transform: scale(1.05);
-}
-.submenu li:hover{
-    background-color: rgba(60, 190, 239, 0.9);
-    border-radius: 5px;
-}
-/*.banner{
-    font-family: 'Dosis', sans-serif;
-    text-align: center;
-    color: white;
-    height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.banner h1{
-    color: white;
-    font-size: 80px;
-    margin: 170px 0px 0px 0px;
-}
-.banner h2{
-    font-size: 40px;
-    margin: 50px 0px 50px 0px;
-}
-.banner h2{
-    text-align: center;
-    color: white;
-}*/
 .boton1{
     margin: 20px 0px 60px 0px;
     text-align: center;
