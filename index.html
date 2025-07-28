@@ -76,73 +76,69 @@
 
         </ul>
 
-        <!-- FIN MENU -->
-
-        <!-- INICIO BANNER -->
-
-        <!-- <div class="carrusel">
-            <div class="atras">
-                <img id="atras" src="images/ATRAS.png" alt="atras" loading="lazy">
-            </div>
-
-            <div class="imagenes">
-                <div id="img">
-                    <img class="img" src="images/carrusel_img3.png" alt="imagen 1" loading="lazy">
-                </div>
-
-                <div id="texto" class="texto">
-                    <h3>Club Sporting Cristal</h3>
-                    <p>el mejor equipo </p>
-                </div>
-            </div>
-
-            <div class="adelante" id="adelante">
-                <img src="images/adelante.png" alt="adelante" loading="lazy">
-            </div>
-        </div> -->
-        
-   
-
-
-        <!-- <div class="puntos" id="puntos"></div> -->
-
-        <script src="app.js"></script>
-        <!-- FIN BANNER -->
-
     </header>
 
     <!-- FIN HEADER -->
     
-<div class="carrusel-container">
-        <!-- Inputs ocultos para controlar los slides -->
-        <input type="radio" name="slides" id="slide-1" checked>
-        <input type="radio" name="slides" id="slide-2">
-        <input type="radio" name="slides" id="slide-3">
-        <input type="radio" name="slides" id="slide-4">
-        
-        <!-- Contenedor del carrusel -->
-        <div class="carrusel">
-            <div class="slide">
-                <img src="images/carrusel_img1.png"alt="Foto 1">
-            </div>
-            <div class="slide">
-                <img src="images/carrusel_img2.png" alt="Foto 2">
-            </div>
-            <div class="slide">
-                <img src="images/carrusel_img3.png" alt="Foto 3">
-            </div>
-            <div class="slide">
-                <img src="images/carrusel_img4.png" alt="Foto 4">
-            </div>
-        </div>
-        <!-- Indicadores de posición -->
-        <div class="indicadores">
-            <label for="slide-1" class="indicador"></label>
-            <label for="slide-2" class="indicador"></label>
-            <label for="slide-3" class="indicador"></label>
-            <label for="slide-4" class="indicador"></label>
-        </div>
-    </div>
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-slide fade">
+      <img src="images/carrusel_img1.png" alt="Imagen 1">
+    </div>
+    <div class="carousel-slide fade">
+      <img src="images/carrusel_img2.png" alt="Imagen 2">
+    </div>
+    <div class="carousel-slide fade">
+      <img src="images/carrusel_img3.png" alt="Imagen 3">
+    </div>
+    <div class="carousel-slide fade">
+      <img src="images/carrusel_img4.png" alt="Imagen 4">
+    </div>
+
+    <!-- Flechas -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <!-- Puntos indicadores -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+</div>
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("carousel-slide");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].classList.add("active");
+}
+
+// Opcional: pasar automáticamente cada 5 segundos
+setInterval(() => plusSlides(1), 5000);
+</script>
 
     <!-- INICIO ÚLTIMAS NOTICIAS -->
 
