@@ -524,14 +524,17 @@ footer p{
   width: 210px;
   align-self: center;
   margin-top: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+ 
 }
 
 .caraFrontal h3,
 .caraTrasera h3 {
-  margin: 23px 0px 5px;
+  padding-top: 20px;
+  margin: 230px 0px 5px;
   font-size: 30px;
   color: #0078C8;
+  
 }
 
 .caraFrontal p,
@@ -617,4 +620,27 @@ footer p{
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+.contenedor-cartas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.contenedor-cartas>div{
+    width: 23%;
+    background-color: rgba(60, 190, 239, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contenedor-cartas h4{
+    margin: 10px;
+}
+.contenedor-cartas h3{
+    margin: 1px 0px 20px 0px;
 }
