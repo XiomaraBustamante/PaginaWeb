@@ -706,3 +706,30 @@ footer p{
 .contenedor-cartas h3{
     margin: 1px 0px 20px 0px;
 }
+
+.todo-stefano{
+    background: #00ffff;
+    display: flex;
+    
+}
+.galeria {
+    width: 900px;
+    display: flex;
+    overflow: scroll;
+}
+.galeria div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}
+.galeria div img{
+    width: 100%;
+    border-radius: 10px;
+    height: 350px;
+}
+.galeria::-webkit-scrollbar{
+    display: none;
+}
