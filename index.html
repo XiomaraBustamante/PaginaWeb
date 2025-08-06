@@ -144,26 +144,119 @@ setInterval(() => plusSlides(1), 5000);
 
     <!-------------------------- INICIO ÚLTIMAS NOTICIAS STEFANO -------------------->
 
-    <h2>ÚLTIMAS NOTICIAS</h2>
-    <div class="todo-stefano">
-    <div class="galeria">
+   <h2>ÚLTIMAS NOTICIAS</h2>
+<div class="flechas-stefano">
+</div>
+    <div class="caja1">
         <div>
-            <span><img src="images/DT_Actual.png" ></span>
-            <span><img src="images/noticiaestadio.jpg" ></span>
-            <span><img src="images/camiseta_cristal.png" ></span>
-            <span><img src="images/noticiaestadio.jpg" ></span>
+            <img src="images/DT_Actual.png" height="300">
+            <h4>4 FEBRERO 2025</h4>
+            <h3>El DT confía en un gran debut</h3>
         </div>
+
         <div>
-            <span><img src="images/DT_Actual.png" ></span>
-            <span><img src="images/noticiaestadio.jpg" ></span>
-            <span><img src="images/camiseta_cristal.png" ></span>
-            <span><img src="images/noticiaestadio.jpg" ></span>
+            <img src="images/lanzamiento.jpg" height="300">
+            <br>
+            <h4>23 FEBRERO 2025</h4>
+            <h3>Lanzamiento de abonos 2025</h3>  
         </div>
-     </div>
+
+        <div>
+            <img src="images/camiseta_cristal.png" height="300">
+            <h4>28 FEBRERO 2025</h4>
+            <h3>Presentación de la nueva Camiseta</h3>   
+        </div>
+
+        <div>
+            <img src="images/noticiaestadio.jpg" height="300">
+            <h4>14 MARZO 2025</h4>
+            <h3>Se jugará en el Estadio San Marcos</h3>
+        </div>
+
+        <div>
+            <img src="images/clausura.jpg" height="300">
+            <h4>31 MARZO 2025</h4>
+            <h3>Gran victoria en el Torneo Clausuras</h3>
+        </div>
+
+        <div>
+            <img src="images/preparativos.png" height="300">
+            <h4>20 ENERO 2025</h4>
+            <h3>Preparativos para el próximo clásico</h3>
+        </div>
+
+        <div>
+            <img src="images/invictos.jpeg" height="300">
+            <h4>02 ABRIL 2025</h4>
+            <h3>Invicto en partidos recientes</h3>
+        </div>
+
+        <div>
+            <img src="images/juveniles.jpeg" height="300">
+            <h4>19 ABRIL 2025</h4>
+            <h3>Juveniles destacan en los entrenamientos</h3>
+        </div>
+
+        <div>
+            <img src="images/exjugadores.webp" height="300">
+            <h4>08 MAYO 2025</h4>
+            <h3>Reconocimiento a exjugadores históricos</h3>
+        </div>
+
+    </div>
 
 
+<!--------------- INICIO DE JAVASCRIPT-STEFANO ------------------->
+<script>
+const scrollContainer = document.querySelector(".caja1");
 
-   </div><!----- todo-stefano --------->
+let isDragging = false;
+let startX;
+let scrollStart;
+let moved = false; // 🔑 para detectar si fue un arrastre o solo un clic
+
+// Scroll con rueda
+scrollContainer.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  scrollContainer.scrollLeft += evt.deltaY;
+});
+
+// Mouse drag
+scrollContainer.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  moved = false;
+  scrollContainer.classList.add("active");
+  startX = e.pageX;
+  scrollStart = scrollContainer.scrollLeft;
+});
+
+scrollContainer.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const dx = e.pageX - startX;
+  if (Math.abs(dx) > 5) moved = true; // se considera "arrastre"
+  scrollContainer.scrollLeft = scrollStart - dx;
+});
+
+scrollContainer.addEventListener("mouseup", (e) => {
+  scrollContainer.classList.remove("active");
+  if (moved) e.preventDefault(); // evitar clics accidentales
+  isDragging = false;
+});
+
+scrollContainer.addEventListener("mouseleave", () => {
+  isDragging = false;
+  scrollContainer.classList.remove("active");
+});
+
+// Evitar clics accidentales durante el arrastre
+scrollContainer.addEventListener("click", (e) => {
+  if (moved) e.preventDefault();
+});
+
+</script>
+
+<!--------------- FIN DE JAVASCRIPT-STEFANO ------------------->    
 
     <div class="boton1">
         <a href="noticias-actualidad.html">VER MÁS NOTICIAS</a>

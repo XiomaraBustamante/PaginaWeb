@@ -106,20 +106,33 @@ h4{
     font-style: italic;
     text-align: center;
 }
+
+
 .caja1{
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    overflow: auto;
+    scroll-behavior: smooth;
+    cursor: grab;
+    user-select: none;
 }
 .caja1>div{
     width: 23%;
     background-color: rgba(60, 190, 239, 0.2);
     padding: 10px;
     border-radius: 10px;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+    flex: none;
 }
 .caja1 img{
     width: 100%;
     border-radius: 10px;
+    filter: grayscale(100%);
+    transition: transform 0.5s;
+    
+
 }
 .caja1 h4{
     margin: 10px;
@@ -127,6 +140,23 @@ h4{
 .caja1 h3{
     margin: 10px 0px 20px 0px;
 }
+.caja1::-webkit-scrollbar{
+  display: none;
+ }
+
+.caja1 div img:hover{
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.caja1.active{
+  cursor: grabbing;
+}
+
+
+
+
+
 .caja2{
     display: flex;
     justify-content: space-evenly;
@@ -707,29 +737,5 @@ footer p{
     margin: 1px 0px 20px 0px;
 }
 
-.todo-stefano{
-    background: #00ffff;
-    display: flex;
-    
-}
-.galeria {
-    width: 900px;
-    display: flex;
-    overflow: scroll;
-}
-.galeria div{
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 20px;
-    padding: 10px;
-    flex: none;
-}
-.galeria div img{
-    width: 100%;
-    border-radius: 10px;
-    height: 350px;
-}
-.galeria::-webkit-scrollbar{
-    display: none;
-}
+
+
