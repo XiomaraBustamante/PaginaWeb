@@ -298,26 +298,91 @@ scrollContainer.addEventListener("click", (e) => {
 
     <h2>NUESTROS JUGADORES</h2>
 
-    <div class="caja1">
-        <div>
-            <img src="images/jugador_flavio.png">
-            <h3>Flavio Alcedo</h3>
-            <h4>Defensa</h4>
-            <p>Jugador estrella</p>
-        </div>
-        <div>
-            <img src="images/jugador_gianfranco.png">
-            <h3>Gianfranco Chávez</h3>
-            <h4>Defensa</h4>
-            <p>Jugador estrella</p>
-        </div>
-        <div>
-            <img src="images/jugador_rafael,png.png">
-            <h3>Rafael Lutiger</h3>
-            <h4>Defensa</h4>
-            <p>Jugador estrella</p>
-        </div>
+    <div id="contenedorPrincipal" class="contenedor-cartas"></div>
+
+    <script>
+        const principal=[
+      {
+        nombre: "DIEGO ENRIQUEZ",
+        rol: "ARQUERO",
+        edad: 25,
+        altura: 1.82,
+        nacionalidad: "Peruana",
+        peso: 78.6,
+        club: "Sporting Cristal",
+        imagenJugador: "images/Jugadores/ENRIQUEZ.png",
+        imagenCamiseta: "images/camisetaArquero1.png"
+      },
+
+      {
+        nombre: "RENATO SOLIS",
+        rol: "ARQUERO",
+        edad: 27,
+        altura: 1.88,
+        nacionalidad: "Peruana",
+        peso: 83.6,
+        club: "Sporting Cristal",
+        imagenJugador: "images/Jugadores/SOLIS.png",
+        imagenCamiseta: "images/camisetaArquero1.png"
+      },
+
+      {
+        nombre: "ALEJANDRO DUARTE",
+        rol: "ARQUERO",
+        edad: 31,
+        altura: 1.81,
+        nacionalidad: "Peruana",
+        peso: 80,
+        club: "Sporting Cristal",
+        imagenJugador: "images/Jugadores/DUARTE.png",
+        imagenCamiseta: "images/camisetaArquero1.png"
+    }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const contenedorPrincipal = document.getElementById('contenedorPrincipal')
+
+    //mostrar jugadores en el index principal
+  principal.forEach(jugadores => {
+    const carta = crearCarta(jugadores);
+    contenedorPrincipal.appendChild(carta);
+  });
+
+    const cartas = document.querySelectorAll('.contenedorCarta');
+  cartas.forEach(carta => {
+    carta.addEventListener('click', () => {
+      carta.classList.toggle('flipped');
+    });
+  });
+});
+
+// Crear una carta, a la funcion crearcarta le paso como parametro un nombre que represente a persona y jugador
+function crearCarta(persona) {
+  const carta = document.createElement('div');
+  carta.className = 'contenedorCarta';
+  carta.innerHTML = `
+    <div class="carasUnidas">
+      <div class="caraFrontal">
+        <img src="${persona.imagenJugador}" alt="${persona.nombre}">
+        <h3>${persona.nombre}</h3>
+        <p>${persona.rol}</p>
+      </div>
+      <div class="caraTrasera">
+        <h3 class="nombreJugador">${persona.nombre}</h3>
+        <ul class="datosJugador">
+          <li><strong>🎯 Edad:</strong> ${persona.edad} años</li>
+          <li><strong>📏 Altura:</strong> ${persona.altura} m</li>
+          <li><strong>🌎 Nacionalidad:</strong> ${persona.nacionalidad}</li>
+          <li><strong>⚖️ Peso:</strong> ${persona.peso} kg</li>
+          <li><strong>🏟️ Club:</strong> ${persona.club}</li>
+        </ul>
+        <img src="${persona.imagenCamiseta}" alt="Camiseta">
+      </div>
     </div>
+  `;
+  return carta;
+}
+    </script>
 
     <div class="boton1">
         <a href="jugadores-pe.html">VER MÁS JUGADORES</a>

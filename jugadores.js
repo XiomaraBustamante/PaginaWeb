@@ -1,6 +1,6 @@
 
 
-  const equipo = [
+const equipo = [
   {
   nombre: "DIEGO ENRIQUEZ",
   rol: "ARQUERO",
@@ -10,7 +10,7 @@
   peso: 78.6,
   club: "Sporting Cristal",
   imagenJugador: "images/Jugadores/ENRIQUEZ.png",
-  imagenCamiseta: "images/cuerpoTecnico.png"
+  imagenCamiseta: "images/camisetaArquero1.png"
 },
 
 {
