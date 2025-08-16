@@ -125,6 +125,7 @@ h4{
     grid-gap: 20px;
     grid-template-columns: auto auto auto;
     flex: none;
+    margin-bottom: 50px; 
 }
 .caja1 img{
     width: 100%;
