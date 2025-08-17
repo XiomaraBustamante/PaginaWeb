@@ -68,36 +68,67 @@
 
 <br><br><br><br><br>
 
-<h2>NUESTRA HISTORIA</h2>
+<h2 id="titulo">NUESTRA HISTORIA</h2>
 
-<div class="caja2">
+<div class="cont-NH">
 
-    <img src="images/nuestraHistoria.jpg">
+    <div class="infoP"> 
+    <img  class="nuestaIMG" id="fotoP" src="images/nuestraHistoria.jpg" >
 
-    <div>
-        <p>
-            En el año 1955, la familia Bentín, junto a la empresa cervecera 
-            Backus, fundó el Club Sporting Cristal en el distrito del Rímac,
-            Lima. Su objetivo fue crear un equipo competitivo que representara 
-            a la empresa y al país con profesionalismo. Debutó en la Primera División en 1956,
-            año en el que se consagró campeón, iniciando así una historia marcada por el éxito. 
-            </p>
-        <p>
+   
+        <p id="parrafito" >
+             El impecable mantel de la excelencia lo extendió Sporting Cristal cuando se convirtió en una institución moderna,
+            de primera clase. Sobre él colocó cuidadosamente los elementos necesarios para un logro irrepetible en el siglo XX: 
+            el primer tricampeonato de la era profesional del fútbol peruano (1994-1995-1996). 
+            Una página de oro que recordamos para deleite de los amantes del fútbol bien jugado.
+           
             Con un estilo de juego elegante y ofensivo, el club se ganó 
             rápidamente el respeto y cariño de la afición. A lo largo de 
             las décadas, Sporting Cristal ha conquistado más de 20 títulos 
             nacionales y ha tenido destacadas participaciones internacionales, 
             como el subcampeonato en la Copa Libertadores de 1997.
+       
         </p>
-        <p>
-            Hoy, Sporting Cristal no solo es uno de los grandes del fútbol peruano, 
-            sino también una institución formadora de talentos y un símbolo de 
-            identidad, esfuerzo y constancia que representa con orgullo 
-            al pueblo rimense y al país.
-        </p>
-    </div>
+       
+     </div>
 
+     <div class="imges">
+        <a onclick="fotos2()">
+            <img src="images/fundadores.jpg" >
+        </a>
+        <a onclick="fotos3()">
+           <img src="images/nacimoscampeones.jpg" >
+        </a>
+        
+        <a onclick="fotos4()">
+            <img src="images/bicampeon.jpg">
+        </a>
+        </div>
+      
 </div>
+
+        <script>
+            let tituloP = document.getElementById("titulo");
+            let fotoprin = document.getElementById("fotoP");
+            let parrafo = document.getElementById("parrafito");
+
+            function fotos2(){
+                tituloP.innerHTML="Fundadores";
+                fotoprin.src = "images/fundadores.jpg" ;
+                parrafo.innerHTML="El club Sporting Cristal nació el 13 de diciembre de 1955 gracias a la iniciativa de don Ricardo Bentín Mujica y su esposa Esther Grande de Bentín, con la finalidad de construir un equipo profesional de fútbol y de aportar en la vida de los deportistas priorizando el desarrollo humano y el crecimiento profesional. Propósito que sesenta y ocho años después se mantiene firme bajo la dirección del Grupo Innova Sports a través de sus proyectos de Fútbol Sostenible";
+            }
+             function fotos3(){
+                tituloP.innerHTML="Nacimos Campeones";
+                fotoprin.src = "images/nacimoscampeones.jpg";
+                parrafo.innerHTML="En su primer año en la era profesional en 1956, Sporting Cristal armó un poderoso equipo teniendo en sus filas a Rafael Asca, Vides Mosquera, Faustino Delgado y el uruguayo Antonio Sacco logrando sumar su primera estrella y se adjudicó como “el club que nació campeón. El impecable mantel de la excelencia lo extendió Sporting Cristal cuando se convirtió en una institución moderna, de primera clase. Sobre él colocó cuidadosamente los elementos necesarios para un logro irrepetible en el siglo XX";
+            }
+             function fotos4(){
+                tituloP.innerHTML="Bicampeon";
+                fotoprin.src = "images/bicampeon.jpg";
+                parrafo.innerHTML="En 1979 y 1980, Sporting Cristal se consagra bicampeón siendo el primero en su historia. En el plantel destacaban jugadores como Ramon Quiroga, Héctor Chumpitaz, Ruben Díaz, Eleazar Soria, Percy Rojas, Juan Carlos Oblitas, Julio César Uribe, Alfredo Quesada, Oswaldo Ramírez, muchos de los mencionados jugaron los mundiales de Argentina 78 y España 82. El técnico fue Marcos Calderón. Durante ese periodo, los celestes mantuvieron 20 partidos sin perder.";
+            }
+
+        </script>
 
 <!-- INICIO FOOTER -->
 

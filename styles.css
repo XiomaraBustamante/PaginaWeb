@@ -153,11 +153,6 @@ h4{
 .caja1.active{
   cursor: grabbing;
 }
-
-
-
-
-
 .caja2{
     display: flex;
     justify-content: space-evenly;
@@ -183,6 +178,58 @@ h4{
     height: 370px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+
+
+
+.cont-NH{
+  width: 98%;
+  margin: 20px auto;
+  padding: 20px 40px;
+  background-color: aliceblue;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+.infoP{
+  display: flex;
+  grid-template-columns:repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.nuestaIMG{
+  width: 50%; 
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.nuestaIMG img:hover{
+  transform: scale(1.05);
+}
+.infoP p {
+    max-width: 50%;     
+    margin: 20px 20px;  
+    line-height: 1.8;     
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.imges{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.imges img {
+  width: 560px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.imges img:hover {
+  transform: scale(1.05);
 }
 .caja3{
     display: flex;
