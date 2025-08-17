@@ -8,7 +8,7 @@
     <link rel="icon" type="images/png" sizes="32x32" href="images/logo-cristal.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -79,8 +79,14 @@
 <div class="carousel-container">
   <div class="carousel">
     <div class="carousel-slide fade">
-      <img src="images/carrusel_img1.png" alt="Imagen 1">
-    </div>
+  <img src="images/carrusel_img1.png" alt="Imagen 1">
+  <div class="welcome-box">
+    <h2>¡BIENVENIDO A SPORTING CRISTAL!</h2>
+    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+    <button onclick="saludar()">Enviar</button>
+  </div>
+</div>
+
     <div class="carousel-slide fade">
       <img src="images/carrusel_img2.png" alt="Imagen 2">
     </div>
@@ -133,7 +139,29 @@ function showSlides(n) {
 }
 
 // Opcional: pasar automáticamente cada 5 segundos
-setInterval(() => plusSlides(1), 5000);
+setInterval(() => plusSlides(1), 8000);
+</script>
+
+
+<script>
+function saludar() {
+  const nombre = document.getElementById("nombre").value.trim();
+  
+  if(nombre){
+    Swal.fire({
+      title: `¡Bienvenida/o ${nombre}!`,
+      text: "Gracias por visitar la página de Sporting Cristal 💎⚽",
+      icon: "success",
+      confirmButtonText: "Vamos al sitio"
+    });
+  } else {
+    Swal.fire({
+      title: "Ups...",
+      text: "Por favor escribe tu nombre 😉",
+      icon: "warning"
+    });
+  }
+}
 </script>
 
     <!-------------------------- INICIO ÚLTIMAS NOTICIAS STEFANO -------------------->
