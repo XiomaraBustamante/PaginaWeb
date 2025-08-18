@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club Sporting Cristal | Página Oficial</title>
     <link rel="icon" type="images/png" sizes="32x32" href="images/logo-cristal.png">
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- FlipDown CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- AOS CSS -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
 </head>
 
 <body>
@@ -81,7 +86,7 @@
     <div class="carousel-slide fade">
   <img src="images/carrusel_img1.png" alt="Imagen 1">
   <div class="welcome-box">
-    <h2>¡BIENVENIDO A SPORTING CRISTAL!</h2>
+    <h2 data-aos="fade-up">¡BIENVENIDO A LA PÁGINA OFICIAL DE SPORTING CRISTAL!</h2>
     <input type="text" id="nombre" placeholder="Escribe tu nombre">
     <button onclick="saludar()">Enviar</button>
   </div>
@@ -139,10 +144,10 @@ function showSlides(n) {
 }
 
 // Opcional: pasar automáticamente cada 5 segundos
-setInterval(() => plusSlides(1), 8000);
+setInterval(() => plusSlides(1), 9500);
 </script>
 
-
+<!-- XIOMARAAA -->
 <script>
 function saludar() {
   const nombre = document.getElementById("nombre").value.trim();
@@ -152,13 +157,17 @@ function saludar() {
       title: `¡Bienvenida/o ${nombre}!`,
       text: "Gracias por visitar la página de Sporting Cristal 💎⚽",
       icon: "success",
-      confirmButtonText: "Vamos al sitio"
+      confirmButtonText: "Vamos al sitio",
+      confirmButtonColor: "rgb(0, 191, 255)" // color celeste Sporting Cristal
+      
     });
   } else {
     Swal.fire({
       title: "Ups...",
       text: "Por favor escribe tu nombre 😉",
-      icon: "warning"
+      icon: "warning",
+      confirmButtonText: "Entendido", // texto personalizado
+      confirmButtonColor: "rgb(0,191,255)" // color celeste Sporting Cristal
     });
   }
 }
@@ -166,7 +175,7 @@ function saludar() {
 
     <!-------------------------- INICIO ÚLTIMAS NOTICIAS STEFANO -------------------->
 
-   <h2>ÚLTIMAS NOTICIAS</h2>
+   <h2  data-aos="fade-up">ÚLTIMAS NOTICIAS</h2>
 <div class="flechas-stefano">
 </div>
     <div class="caja1">
@@ -284,8 +293,23 @@ scrollContainer.addEventListener("click", (e) => {
 
     <!-------------------------------------- FIN ÚLTIMAS NOTICIAS STEFANO -------------------------------------->
 
-    <!-- INICIO NUESTRO PRÓXIMO PARTIDO -->
-
+    <!-- INICIO NUESTRO PRÓXIMO PARTIDO XIOMARA -->
+     <div class="contador-container">
+      <div class="content-box">
+      <h2 data-aos="zoom-in">NUESTRO PRÓXIMO PARTIDO</h2>
+      <div class="contadorTexto">
+      <p>Sporting Cristal VS UTC Cajamarca</p>
+      <p>Sábado 23 de agosto de 2025</p>
+      </div>
+      <div id="flipdown" class="flipdown"></div>
+      <div class="buttons">
+        <a href="resultados-fixture.html" class="button">VER MÁS PARTIDOS</a>
+      </div>
+      </div>
+     </div>
+      
+     
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     <div class="caja2">
         <div>
             <h2>NUESTRO PRÓXIMO PARTIDO</h2>
@@ -307,16 +331,18 @@ scrollContainer.addEventListener("click", (e) => {
         </div>
         <img src="images/nuestropp3.png">
     </div>
-
-    <div class="boton1">
-        <a href="resultados-fixture.html">VER MÁS PARTIDOS</a>
-    </div>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  
+    
+        
+   
+    
 
     <!-- FIN NUESTRO PRÓXIMO PARTIDO -->
 
     <!-- INICIO NUESTROS MEJORES JUGADORES -->
 
-    <h2>NUESTROS JUGADORES</h2>
+    <h2 data-aos="fade-up">NUESTROS JUGADORES</h2>
 
     <div id="contenedorPrincipal" class="contenedor-cartas"></div>
 
@@ -410,6 +436,20 @@ function crearCarta(persona) {
 
     <!-- FIN NUESTROS MEJORES JUGADORES -->
 
+<!-- === SECCIÓN FINAL CRISTAL === -->
+
+<section class="final-cristal">
+  <h2 class="frase-motivadora" data-aos="fade-up" data-aos-delay="0">
+    ¡Siempre contigo, siempre Sporting Cristal! 💙⭐
+  </h2>
+
+  <div class="escudo" data-aos="slide-up" data-aos-duration="1200">
+    <img src="images/final.png" alt="Sporting Cristal">
+  </div>
+</section>
+
+
+
     <!-- INICIO FOOTER -->
 
     <footer>
@@ -426,8 +466,19 @@ function crearCarta(persona) {
         <p>Copyright &copy; 2025 Club Sporting Cristal. Todos los derechos reservados.</p>
 
     </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+       AOS.init({
+        duration: 1200,  // Duración animación
+        once: true       // Se anima solo la primera vez (true) o siempre (false)
+        });
+    </script>
 
     <!-- FIN FOOTER -->
+     <!--CONTADOR-->
+   <script src="contador.js"></script>
+     
 
 </body>
 

@@ -321,7 +321,8 @@ footer{
     text-align: center;
     font-family: 'Dosis';
     background-color: rgba(60, 190, 239, 0.3);
-    margin: 35px 0px 0px 0px;
+    margin: 0;
+  padding: 20px 0;
 }
 footer>img{
     padding: 20px;
@@ -673,7 +674,7 @@ footer p{
 
 
 .encabezadoEquipo {
-  background: linear-gradient(to right, #0078C8, #00BFFF); /* Fondo azul degradado */
+  background: linear-gradient(to right, #0078C8, rgb(0, 191, 255)); /* Fondo azul degradado */
   padding: 30px;
   padding-left: 150px;
   padding-right: 150px;
@@ -768,7 +769,8 @@ footer p{
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  padding: 20px;
+  padding: 20px 20px; /* espacio superior e inferior moderado */
+    margin-bottom: 30px; /* espacio razonable antes de la siguiente sección */
 }
 
 .contenedor-cartas>div{
@@ -776,6 +778,7 @@ footer p{
     background-color: rgba(60, 190, 239, 0.2);
     padding: 10px;
     border-radius: 10px;
+    margin-bottom: 20px; 
 }
 
 .contenedor-cartas h4{
@@ -793,11 +796,12 @@ footer p{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 102, 204, 0.8); /* azul con transparencia */
+  background: rgba(0, 162, 255, 0.8); /* azul con transparencia */
   padding: 20px;
   border-radius: 12px;
   text-align: center;
   color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-box input {
@@ -805,6 +809,7 @@ footer p{
   margin: 10px 0;
   border: none;
   border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-box button {
@@ -814,4 +819,181 @@ footer p{
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-box h2{
+  color: white;
+}
+
+/* === CONTADOR XIOMARA === */
+
+/* Fondo de los dígitos */
+.flipdown .rotor {
+  background-color: #00ADEF !important; 
+}
+
+/* Números */
+.flipdown .rotor .rotor-leaf-front,
+.flipdown .rotor .rotor-leaf-back,
+.flipdown .rotor .rotor-top,
+.flipdown .rotor .rotor-bottom {
+  color: #fff !important;
+  background-color: #00ADEF !important;
+}
+
+/* Ocultar etiquetas en inglés */
+.flipdown .rotor-group-heading:before {
+  display: none !important;
+  content: "" !important;
+}
+
+/* Etiquetas (Días, Horas...) */
+.flipdown .rotor-group-heading {
+  color: #00ADEF !important;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+  font-family:'Dosis', sans-serif; 
+}
+
+/* Contenedor general */
+.contador-container {
+  position: relative;
+  background-image: url('images/contadorfinal.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh; 
+  margin: 0;
+  padding: 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.contador-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 174, 239, 0.4);
+  z-index: 0;
+}
+
+
+.contador-container * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Caja para texto + contador */
+.content-box {
+  background: rgba(255, 253, 253, 0.5);
+  padding: 40px 60px;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center; 
+  text-align: center;
+}
+
+
+.content-box h2 {
+  font-size: 50px;
+  color: #D42A2A;
+  margin-bottom: 20px;
+}
+
+
+.content-box p {
+ font-size: 20px;
+  color: #003B5C; 
+  margin: 12px auto;
+  padding: 10px 20px;
+  max-width: 700px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+
+#contador {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.content-box .button {
+  background-color: #00ADEF;
+  text-decoration: none;
+  color: white;
+  padding: 12px 40px;
+  border: white solid 2px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.content-box .button:hover {
+  background-color: #D42A2A;
+  border: #00ADEF solid 2px;
+}
+
+/* SECCIÓN FINAL CRISTAL */
+.final-cristal {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  
+}
+
+.final-cristal .frase-motivadora {
+  padding-top: 20px;
+ margin-bottom: 15px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #003B5C;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  font-family: 'Dosis', sans-serif;
+}
+
+.final-cristal .escudo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.final-cristal .escudo img {
+  width: 100%;        /* ocupa todo el ancho del contenedor */
+  max-width: 1000px;  /* limita el tamaño máximo si la pantalla es muy grande */
+  height: auto;
+  filter: drop-shadow(0 0 25px rgba(0,0,0,0.3));
+  margin-bottom: 0;   /* pegada al footer */
+  transition: transform 0.3s ease;
+}
+
+.final-cristal .escudo img:hover {
+  transform: scale(1.05);
 }
