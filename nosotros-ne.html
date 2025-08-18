@@ -70,9 +70,20 @@
 
 <h2>NUESTRO ESTADIO</h2>
 
-<div class="caja2">
+<div class="caja2-2">
+ 
+  <div class="estadio-visor">
+    <div class="estadio-imagen">
+      <img id="imagenGrande" src="images/nuestroEstadio.jfif" alt="Nuestro Estadio">
+    </div>
 
-    <img src="images/nuestroEstadio.jfif">
+    <div class="estadio-miniaturas">
+      <img src="images/nuestroEstadio.jfif" class="activo" onclick="cambiarImagen(this)">
+      <img src="images/estadioDeLejos2.jpg" onclick="cambiarImagen(this)">
+      <img src="images/estadioDeLejos.jpg" onclick="cambiarImagen(this)">
+      <img src="images/estadioDeLejos4.jpeg" onclick="cambiarImagen(this)">
+    </div>
+  </div>
 
     <div>
         <p>
@@ -89,6 +100,19 @@
 
 </div>
 
+<script>
+  function cambiarImagen(elemento) {
+    
+    document.getElementById("imagenGrande").src = elemento.src;
+
+    
+    document.querySelectorAll(".estadio-miniaturas img")
+      .forEach(img => img.classList.remove("activo"));
+
+    
+    elemento.classList.add("activo");
+  }
+</script>
 <!-- INICIO FOOTER -->
 
 <footer>
