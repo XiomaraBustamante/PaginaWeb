@@ -184,47 +184,51 @@ h4{
 
 
 .cont-NH{
-  width: 98%;
+  width: 95%;
   margin: 20px auto;
   padding: 20px 40px;
   background-color: aliceblue;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
 }
-.infoP{
-  display: flex;
-  grid-template-columns:repeat(3, 1fr);
-  gap: 15px;
-  margin-bottom: 30px;
-  align-items: center;
+.infoP {
+    display: flex; /* Esto hará que la imagen y el nuevo div con el texto estén uno al lado del otro */
+    gap: 20px;
+    align-items: flex-start; /* Alinea los elementos en la parte superior del contenedor */
 }
 
-.nuestaIMG{
-  width: 50%; 
-  height: auto;
+.titulo-parra{
+    display: flex;
+    flex-direction: column; /* Coloca el título sobre el párrafo */
+    max-width: 100%;
+}
+
+.infoP p {
+    width: 100%; /* Ahora el párrafo puede ocupar todo el ancho del nuevo div */
+    margin: 0; /* Elimina el margen para evitar espacios no deseados */
+    line-height: 1.5;
+    height: 80px;
+    text-align: justify;
+    font-size:100%;
+    font-family: Arial;
+ 
+}
+.nuestaIMG {
+  width: 900px;
+  height: 520px;
   border-radius: 15px;
   transition: transform 0.3s ease;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-.nuestaIMG img:hover{
-  transform: scale(1.05);
-}
-.infoP p {
-    max-width: 50%;     
-    margin: 20px 20px;  
-    line-height: 1.8;     
-    font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
 }
 .imges{
-  display: grid;
+  justify-content: center;
+  display: flex;
+  flex-direction:row;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 20px;
 }
 .imges img {
-  width: 560px;
+  width: 400px;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
@@ -544,8 +548,13 @@ footer p{
 .imagenR {
     width: 50%;
     display: flex;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: right;
     margin-top: 20px;
+}
+.imagenR img{
+  position: relative;
+  top: 92px;
 }
 
 .colo{

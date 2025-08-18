@@ -68,15 +68,17 @@
 
 <br><br><br><br><br>
 
-<h2 id="titulo">NUESTRA HISTORIA</h2>
+
 
 <div class="cont-NH">
-
+    
     <div class="infoP"> 
     <img  class="nuestaIMG" id="fotoP" src="images/nuestraHistoria.jpg" >
-
-   
+    
+    <div class="titulo-parra">
+        <h2 id="titulo">NUESTRA HISTORIA</h2>
         <p id="parrafito" >
+
              El impecable mantel de la excelencia lo extendió Sporting Cristal cuando se convirtió en una institución moderna,
             de primera clase. Sobre él colocó cuidadosamente los elementos necesarios para un logro irrepetible en el siglo XX: 
             el primer tricampeonato de la era profesional del fútbol peruano (1994-1995-1996). 
@@ -89,7 +91,7 @@
             como el subcampeonato en la Copa Libertadores de 1997.
        
         </p>
-       
+       </div>
      </div>
 
      <div class="imges">
@@ -102,6 +104,9 @@
         
         <a onclick="fotos4()">
             <img src="images/bicampeon.jpg">
+        </a>
+         <a onclick="fotos5()">
+            <img src="images/nuestraHistoria.jpg">
         </a>
         </div>
       
@@ -126,6 +131,12 @@
                 tituloP.innerHTML="Bicampeon";
                 fotoprin.src = "images/bicampeon.jpg";
                 parrafo.innerHTML="En 1979 y 1980, Sporting Cristal se consagra bicampeón siendo el primero en su historia. En el plantel destacaban jugadores como Ramon Quiroga, Héctor Chumpitaz, Ruben Díaz, Eleazar Soria, Percy Rojas, Juan Carlos Oblitas, Julio César Uribe, Alfredo Quesada, Oswaldo Ramírez, muchos de los mencionados jugaron los mundiales de Argentina 78 y España 82. El técnico fue Marcos Calderón. Durante ese periodo, los celestes mantuvieron 20 partidos sin perder.";
+            }
+            function fotos5(){
+                tituloP.innerHTML="NUESTRA HISTORIA";
+                fotoprin.src="images/nuestraHistoria.jpg";
+                parrafo.innerHTML="El impecable mantel de la excelencia lo extendió Sporting Cristal cuando se convirtió en una institución moderna, de primera clase. Sobre él colocó cuidadosamente los elementos necesarios para un logro irrepetible en el siglo XX: el primer tricampeonato de la era profesional del fútbol peruano (1994-1995-1996). Una página de oro que recordamos para deleite de los amantes del fútbol bien jugado. Con un estilo de juego elegante y ofensivo, el club se ganó rápidamente el respeto y cariño de la afición. A lo largo de las décadas, Sporting Cristal ha conquistado más de 20 títulos nacionales y ha tenido destacadas participaciones internacionales, como el subcampeonato en la Copa Libertadores de 1997.";
+
             }
 
         </script>
