@@ -184,7 +184,7 @@ h4{
 
 
 .cont-NH{
-  width: 95%;
+  width: 100%;
   margin: 20px auto;
   padding: 20px 40px;
   background-color: aliceblue;
@@ -193,24 +193,22 @@ h4{
 }
 .infoP {
     display: flex; /* Esto hará que la imagen y el nuevo div con el texto estén uno al lado del otro */
-    gap: 20px;
-    align-items: flex-start; /* Alinea los elementos en la parte superior del contenedor */
+    gap: 5px;
 }
-
 .titulo-parra{
     display: flex;
     flex-direction: column; /* Coloca el título sobre el párrafo */
     max-width: 100%;
 }
-
 .infoP p {
-    width: 100%; /* Ahora el párrafo puede ocupar todo el ancho del nuevo div */
-    margin: 0; /* Elimina el margen para evitar espacios no deseados */
+    width: 85%; /* Ahora el párrafo puede ocupar todo el ancho del nuevo div */
+    margin: 50px 50px 0; /* Elimina el margen para evitar espacios no deseados */
     line-height: 1.5;
-    height: 80px;
+    height: auto;
     text-align: justify;
-    font-size:100%;
-    font-family: Arial;
+    font-size:25px;
+    font-family: DOSIS ;
+    align-items: center;
  
 }
 .nuestaIMG {
@@ -228,7 +226,7 @@ h4{
   gap: 20px;
 }
 .imges img {
-  width: 400px;
+  width: 428px;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
