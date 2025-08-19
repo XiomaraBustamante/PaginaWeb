@@ -243,12 +243,12 @@ let startX;
 let scrollStart;
 let moved = false; // 🔑 para detectar si fue un arrastre o solo un clic
 
-// Scroll con rueda
+// // Scroll con rueda
 scrollContainer.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
+ evt.preventDefault();                                //activa mover con la rueda del mouse 
+ scrollContainer.scrollLeft += evt.deltaY;
 });
-
+ 
 // Mouse drag
 scrollContainer.addEventListener("mousedown", (e) => {
   isDragging = true;
@@ -265,6 +265,11 @@ scrollContainer.addEventListener("mousemove", (e) => {
   if (Math.abs(dx) > 5) moved = true; // se considera "arrastre"
   scrollContainer.scrollLeft = scrollStart - dx;
 });
+//permite mover con un click sin afectar a las imagenes
+scrollContainer.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false"); // evita arrastrar imagen
+});
+
 
 scrollContainer.addEventListener("mouseup", (e) => {
   scrollContainer.classList.remove("active");
