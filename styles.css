@@ -1113,3 +1113,14 @@ footer p{
   display: flex;
   gap: 35px;
   }
+
+  /*ULTIMOS RESULTADOS MEJORADO*/
+  .fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}

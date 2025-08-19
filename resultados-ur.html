@@ -107,6 +107,28 @@
     </div>
 </div>
 
+<script>
+document.querySelectorAll(".caja2 img").forEach(img => {
+  img.addEventListener("click", () => {
+    img.classList.add("fade-out");
+
+    setTimeout(() => {
+      if (img.src.includes("-alt")) {
+        img.src = img.src.replace("-alt", "");   
+      } else {
+        img.src = img.src.replace(".png", "-alt.png");
+      }
+
+      img.classList.remove("fade-out");
+      img.classList.add("fade-in");
+    }, 300);
+
+    setTimeout(() => {
+      img.classList.remove("fade-in");
+    }, 600);
+  });
+});
+</script>
 <!-- INICIO FOOTER -->
 
 <footer>
