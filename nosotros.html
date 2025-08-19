@@ -7,7 +7,8 @@
     <link rel="icon" type="images/png" sizes="32x32" href="images/logo-cristal.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <!-- AOS CSS -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -69,21 +70,21 @@
 <br><br><br><br><br>
 
 <div class="texto">
-    <h2>SOBRE NOSOTROS</h2>
+    <h2 data-aos="zoom-in">SOBRE NOSOTROS</h2>
     <p>
         El Club Sporting Cristal es una institución deportiva con sede en Lima, Perú, fundada el 13 de diciembre de 1955 por la familia Bentín junto a la cervecera Backus. Desde su debut en Primera División en 1956, ha sido protagonista del fútbol peruano, logrando múltiples campeonatos nacionales y destacadas participaciones internacionales. Su mayor hito continental fue el subcampeonato de la Copa Libertadores en 1997. Con una identidad basada en el buen juego y la formación de talentos, se ha consolidado como uno de los clubes más importantes del país. Sporting Cristal busca seguir dejando huella en el fútbol nacional.
     </p>
 </div>
 
-<div class="caja3">
+<div class="caja3" data-aos="slide-up">
     <a href="nosotros-nh.html">
         <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/nuestraHistoria.jpg);background-size: cover;background-position: center;">
-            <h2>NUESTRA HISTORIA</h2>
+            <h2 >NUESTRA HISTORIA</h2>
         </div>
     </a>
     <a href="nosotros-ne.html">
         <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/nuestroEstadio.jfif);background-size: cover;background-position: center;">
-            <h2>NUESTRO ESTADIO</h2>
+            <h2>NUESTRAS INSTALACIONES</h2>
         </div>
     </a>
     <a href="nosotros-prensa.html">
@@ -116,6 +117,15 @@
 </footer>
 
 <!-- FIN FOOTER -->
+
+<!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+       AOS.init({
+        duration: 1200,  // Duración animación
+        once: true       // Se anima solo la primera vez (true) o siempre (false)
+        });
+    </script>
 
 </body>
 </html>
