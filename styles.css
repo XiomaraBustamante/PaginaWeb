@@ -1034,6 +1034,8 @@ footer p{
   height: 450px;    
   object-fit: cover;
   border-radius: 10px;
+  margin-top: 30px;   /* espacio arriba */
+  margin-bottom: 50px
   
 }
 
@@ -1096,3 +1098,18 @@ footer p{
   height: 50px;
   margin-bottom: 5px;
 }
+
+
+.caja2-2 p{
+ font-size: 18px;
+ position: relative; left: -240px;
+}
+.caja2-2 h2{
+  position: relative; left: -240px;
+
+}
+
+.estadio-miniaturas {
+  display: flex;
+  gap: 35px;
+  }

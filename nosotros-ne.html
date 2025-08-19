@@ -14,54 +14,53 @@
 
 <header>
 
+<!-- INICIO MENU -->
 
-        <!-- INICIO MENU -->
+    <ul class="menu">
 
-        <ul class="menu">
+        <li><a href="index.html"><img src="images/logo-cristal.png" width="60px"></a></li>
 
-            <li><a href="index.html"><img src="images/logo-cristal.png" width="60px"></a></li>
+        <li><a href="nosotros.html">NOSOTROS</a>
+            <ul class="submenu">
+                <li><a href="nosotros-nh.html">NUESTRA HISTORIA</a></li>
+                <li><a href="nosotros-ne.html">NUESTRO ESTADIO</a></li>
+                <li><a href="nosotros-prensa.html">PRENSA</a></li>
+                <li><a href="nosotros-aac.html">ATENCIÓN AL CLIENTE</a></li>
+            </ul>
+        </li>
 
-            <li><a href="nosotros.html">NOSOTROS</a>
-                <ul class="submenu">
+        <li><a href="resultados.html">RESULTADOS</a>
+            <ul class="submenu">
+                
+                <li><a href="resultados-fixture.html">FIXTURE</a></li>
+                
+                <li><a href="resultados-ur.html">ÚLTIMOS RESULTADOS</a></li>
+            </ul>
+        </li>
 
-                    <li><a href="nosotros-nh.html">NUESTRA HISTORIA</a></li>
-                    <li><a href="nosotros-ne.html">NUESTRAS INSTALACIONES</a></li>
-                    <li><a href="nosotros-prensa.html">PRENSA</a></li>
-                    <li><a href="nosotros-aac.html">ATENCIÓN AL CLIENTE</a></li>
-                </ul>
-            </li>
+        
 
-            <li><a href="resultados.html">RESULTADOS</a>
-                <ul class="submenu">
-                    
-                    <li><a href="resultados-fixture.html">FIXTURE</a></li>
-                    
-                    <li><a href="resultados-ur.html">ÚLTIMOS RESULTADOS</a></li>
-                </ul>
-            </li>
-
-
-            <li><a href="entradas.html">ENTRADAS</a>
-                <ul class="submenu">
-                    <li><a href="entradas-vde.html">VENTA DE ENTRADAS</a></li>
-                   
-                </ul>
-            </li>
-
-            <li><a href="jugadores.html">JUGADORES</a>
-                <ul class="submenu">
-                    <li><a href="jugadores-pe.html">PRIMER EQUIPO</a></li>
-                </ul>
-            </li>
-
-            <li><a href="to.html">TIENDA OFICIAL</a>
-                <ul class="submenu">
-                    <li><a href="to-c2025.html">CAMISETA 2025</a></li>
-                    <li><a href="to-op.html">OTROS PRODUCTOS</a></li>
-                </ul>
-            </li>
-
+        <li><a href="entradas.html">ENTRADAS</a>
+        <ul class="submenu">
+            <li><a href="entradas-vde.html">VENTA DE ENTRADAS</a></li>
+            <li><a href="entradas-vda.html">VENTA DE ABONOS</a></li>
         </ul>
+        </li>
+
+        <li><a href="jugadores.html">JUGADORES</a>
+            <ul class="submenu">
+                <li><a href="jugadores-pe.html">PRIMER EQUIPO</a></li>
+            </ul>
+        </li>
+
+        <li><a href="to.html">TIENDA OFICIAL</a>
+            <ul class="submenu">
+                <li><a href="to-c2025.html">CAMISETA 2025</a></li>
+                <li><a href="to-op.html">OTROS PRODUCTOS</a></li>
+            </ul>
+        </li>
+
+    </ul>
 
 <!-- FIN MENU -->
 
@@ -69,7 +68,7 @@
 
 <br><br><br><br><br>
 
-<h2>NUESTRO ESTADIO</h2>
+
 
 <div class="caja2-2">
  
@@ -79,33 +78,83 @@
     </div>
 
     <div class="estadio-miniaturas">
-      <img src="images/nuestroEstadio.jfif" class="activo" onclick="cambiarImagen(this)">
-      <img src="images/estadioDeLejos2.jpg" onclick="cambiarImagen(this)">
-      <img src="images/estadioDeLejos.jpg" onclick="cambiarImagen(this)">
-      <img src="images/estadioDeLejos4.jpeg" onclick="cambiarImagen(this)">
+      <img src="images/nuestroEstadio.jfif" class="activo" onclick="cambiarImagen(this,0)">
+      <img src="images/estadioDeLejos2.jpg" onclick="cambiarImagen(this,1)">
+      <img src="images/estadioDeLejos.jpg" onclick="cambiarImagen(this,2)">
+      <img src="images/estadioDeLejos4.jpeg" onclick="cambiarImagen(this,3)">
     </div>
   </div>
 
-    <div>
-        <p>
-            Sporting Cristal disputa sus encuentros de local en el Estadio Alberto Gallardo, ubicado en el distrito de San Martín de Porres, Lima. Con una capacidad aproximada de 11,600 espectadores, este recinto ha sido la casa oficial del club durante gran parte de su historia reciente.
-        </p>
+  
 
-        <p>
-            Aunque el estadio no es de propiedad del club, Sporting Cristal tiene un convenio con el IPD para su uso exclusivo en partidos oficiales. Las instalaciones brindan una experiencia cercana y familiar para los hinchas, manteniendo un ambiente vibrante y celeste en cada jornada.
+       <div id="textoDescripcion"> 
+         <h2>NUESTRAS INSTALACIONES</h2>
+         <div id="parrafosDescripcion">
+         
+        <p>Sporting Cristal disputa sus encuentros de local en el Estadio Alberto Gallardo, ubicado en el distrito de San Martín de Porres, Lima.
+            Con una capacidad aproximada de 11,600 espectadores, este recinto ha sido la casa oficial del club durante gran parte de su historia reciente.</p>
+                
+        <p>Aunque el estadio no es de propiedad del club, Sporting Cristal tiene un convenio con el IPD para su uso exclusivo en partidos oficiales. 
+            Las instalaciones brindan una experiencia cercana y familiar para los hinchas, manteniendo un ambiente vibrante y celeste en cada jornada.</p>
+                
+        <p>Desde que juega en el Alberto Gallardo, el equipo ha forjado una fuerte conexión con su hinchada, que asiste fielmente a cada partido. 
+            La directiva continúa trabajando en mejoras para el recinto y en ofrecer a los aficionados un entorno seguro, cómodo y lleno de pasión rimense.
         </p>
-
-        <p>
-            Desde que juega en el Alberto Gallardo, el equipo ha forjado una fuerte conexión con su hinchada, que asiste fielmente a cada partido. La directiva continúa trabajando en mejoras para el recinto y en ofrecer a los aficionados un entorno seguro, cómodo y lleno de pasión rimense.
+        </div>
     </div>
 
 </div>
 
 <script>
-  function cambiarImagen(elemento) {
+   const descripciones = [
+    `
+        <p>Sporting Cristal disputa sus encuentros de local en el Estadio Alberto Gallardo, ubicado en el distrito de San Martín de Porres, Lima.
+            Con una capacidad aproximada de 11,600 espectadores, este recinto ha sido la casa oficial del club durante gran parte de su historia reciente.</p>
+                
+        <p>Aunque el estadio no es de propiedad del club, Sporting Cristal tiene un convenio con el IPD para su uso exclusivo en partidos oficiales. 
+            Las instalaciones brindan una experiencia cercana y familiar para los hinchas, manteniendo un ambiente vibrante y celeste en cada jornada.</p>
+                
+        <p>Desde que juega en el Alberto Gallardo, el equipo ha forjado una fuerte conexión con su hinchada, que asiste fielmente a cada partido. 
+        La directiva continúa trabajando en mejoras para el recinto y en ofrecer a los aficionados un entorno seguro, cómodo y lleno de pasión rimense.</p>
+    `,
+
+    `
+        <p>La vista panorámica del Estadio Alberto Gallardo desde lejos permite apreciar su ubicación única junto al río Rímac, en pleno corazón de Lima. 
+        Este entorno le da un carácter especial y lo convierte en un ícono de la ciudad.</p>
+    
+        <p>Desde este ángulo se pueden distinguir sus tribunas principales y la integración del estadio con el barrio que lo rodea, reforzando la identidad barrial del club.</p>
+    
+        <p>La majestuosidad de esta panorámica refleja cómo el estadio, a pesar de su tamaño reducido, se erige como un símbolo de orgullo para la familia celeste 
+        y un espacio cargado de historia y emociones inolvidables.</p>
+    `,
+
+     `
+        <p>En esta toma desde la distancia se pueden observar las tribunas y la energía que se vive en cada jornada de fútbol. 
+        El Alberto Gallardo se convierte en un hervidero de pasión cada vez que Sporting Cristal juega de local.</p>
+    
+        <p>Los hinchas, siempre presentes, tiñen las tribunas de celeste y convierten el estadio en una fiesta que contagia a todos los asistentes.</p>
+    
+        <p>Esta imagen refleja no solo la estructura física del recinto, sino también la mística y tradición que ha acompañado al club a lo largo de su historia reciente, 
+        reforzando el vínculo entre equipo e hinchada.</p>
+    `
+    ,
+    `
+        <p>La fotografía lateral del estadio permite apreciar con mayor detalle las características arquitectónicas de sus tribunas e infraestructura. 
+        Aunque modesto en comparación con otros estadios, cada rincón guarda memorias imborrables para los hinchas.</p>
+    
+        <p>Este ángulo muestra la cercanía de la cancha con el público, lo que convierte cada partido en una experiencia única para quienes asisten. 
+        Esa proximidad ha sido clave para que el Gallardo sea considerado una verdadera fortaleza rimense.</p>
+    
+        <p>El Estadio Alberto Gallardo, con su historia y simbolismo, continúa siendo un emblema de identidad y orgullo para Sporting Cristal, 
+        reflejando la grandeza del club más allá de lo material.</p>
+    `
+   ];
+           
+  function cambiarImagen(elemento, index) {
     
     document.getElementById("imagenGrande").src = elemento.src;
 
+    document.getElementById("parrafosDescripcion").innerHTML = descripciones[index];
     
     document.querySelectorAll(".estadio-miniaturas img")
       .forEach(img => img.classList.remove("activo"));
