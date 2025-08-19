@@ -175,7 +175,7 @@ function saludar() {
    <h2  data-aos="fade-up">ÚLTIMAS NOTICIAS</h2>
 <div class="flechas-stefano">
 </div>
-    <div class="caja1">
+    <div class="caja1"   tabindex="0"> 
         <div>
             <img src="images/DT_Actual.png" height="300">
             <h4>4 FEBRERO 2025</h4>
@@ -243,7 +243,7 @@ let startX;
 let scrollStart;
 let moved = false; // 🔑 para detectar si fue un arrastre o solo un clic
 
-// // Scroll con rueda
+
 scrollContainer.addEventListener("wheel", (evt) => {
  evt.preventDefault();                                //activa mover con la rueda del mouse 
  scrollContainer.scrollLeft += evt.deltaY;
@@ -256,6 +256,7 @@ scrollContainer.addEventListener("mousedown", (e) => {
   scrollContainer.classList.add("active");
   startX = e.pageX;
   scrollStart = scrollContainer.scrollLeft;
+  
 });
 
 scrollContainer.addEventListener("mousemove", (e) => {
@@ -265,7 +266,7 @@ scrollContainer.addEventListener("mousemove", (e) => {
   if (Math.abs(dx) > 5) moved = true; // se considera "arrastre"
   scrollContainer.scrollLeft = scrollStart - dx;
 });
-//permite mover con un click sin afectar a las imagenes
+//permite mover con un CLICK sin afectar a las imagenes
 scrollContainer.querySelectorAll("img").forEach(img => {
   img.setAttribute("draggable", "false"); // evita arrastrar imagen
 });
