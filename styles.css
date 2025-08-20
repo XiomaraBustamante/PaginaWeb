@@ -487,6 +487,7 @@ footer p{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 0;
     min-height: 500px; /* fuerza igual altura para todos */
+    border-radius: 40px;
 }
 
 .blog-txt {
@@ -512,6 +513,13 @@ footer p{
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    transition: transform 0.3s ease;
+    border-radius: 30px;
+}
+
+.blog-1 img:hover {
+  transform: scale(1.1); 
+  cursor: pointer;     
 }
 
 .conteniendo {
