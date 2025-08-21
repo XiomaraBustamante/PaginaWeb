@@ -112,10 +112,20 @@ h4{
 
 
 
+/* Intenta aplicar outline: none de forma más específica a todos los elementos que pueden ser enfocados dentro de tu carrusel. */
+.caja1 > div,
+.caja1 > div img,
+.caja1 > div h4,
+.caja1 > div h3,
+.caja1.activo {
+    outline: none !important;
+}
 
-
-
-
+/* También, verifica el estilo en el estado de foco. */
+.caja1:focus-within,
+.caja1 > div:focus-within {
+    outline: none !important;
+}
 
 .caja1{
     text-align: center;
@@ -160,7 +170,7 @@ h4{
    cursor: grab;
   transform: scale(1.06);
 }
-.caja1.active{
+.caja1.activo{
   cursor: grabbing;
   outline-offset: 0px!important;
 }
@@ -791,9 +801,9 @@ footer p{
   display: inline-block;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
-}
+/* .active, .dot:hover {
+  background-color: #717171; // el culpable del cuadro gris al hacer click
+} */
 
 .fade {
   animation: fadeEffect 1s;

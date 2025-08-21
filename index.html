@@ -253,7 +253,7 @@ scrollContainer.addEventListener("wheel", (evt) => {
 scrollContainer.addEventListener("mousedown", (e) => {
   isDragging = true;
   moved = false;
-  scrollContainer.classList.add("active");
+  scrollContainer.classList.add("activo");
   startX = e.pageX;
   scrollStart = scrollContainer.scrollLeft;
   
@@ -263,7 +263,7 @@ scrollContainer.addEventListener("mousemove", (e) => {
   if (!isDragging) return;
   e.preventDefault();
   const dx = e.pageX - startX;
-  if (Math.abs(dx) > 5) moved = true; // se considera "arrastre"
+  if (Math.abs(dx) > 20) moved = true; // se considera "arrastre"
   scrollContainer.scrollLeft = scrollStart - dx;
 });
 //permite mover con un CLICK sin afectar a las imagenes
@@ -273,14 +273,14 @@ scrollContainer.querySelectorAll("img").forEach(img => {
 
 
 scrollContainer.addEventListener("mouseup", (e) => {
-  scrollContainer.classList.remove("active");
+  scrollContainer.classList.remove("activo");
   if (moved) e.preventDefault(); // evitar clics accidentales
   isDragging = false;
 });
 
 scrollContainer.addEventListener("mouseleave", () => {
   isDragging = false;
-  scrollContainer.classList.remove("active");
+  scrollContainer.classList.remove("activo");
 });
 
 // Evitar clics accidentales durante el arrastre
