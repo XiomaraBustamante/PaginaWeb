@@ -177,58 +177,58 @@ function saludar() {
 </div>
     <div class="caja1"   > 
         <div>
-            <img src="images/DT_Actual.png" height="300">
-            <h4>4 FEBRERO 2025</h4>
-            <h3>El DT confía en un gran debut</h3>
+            <img src="images/CARRUSEL-NOTI/DT.jpg" width="600" height="500">
+            <h4>12 ABRIL 2025</h4>
+            <h3>El NUEVO DT VUELVE AL CLUB </h3>
         </div>
 
         <div>
-            <img src="images/lanzamiento.jpg" height="300">
+            <img src="images/CARRUSEL-NOTI/NEXT-MATCH.webp" width="600" height="500">
             <br>
-            <h4>23 FEBRERO 2025</h4>
-            <h3>Lanzamiento de abonos 2025</h3>  
+            <h4>23 AGOSTO 2025 11:00AM </h4>
+            <h3>S.CRISTAL VS UTC</h3>  
         </div>
 
         <div>
-            <img src="images/camiseta_cristal.png" height="300">
-            <h4>28 FEBRERO 2025</h4>
+            <img src="images/CARRUSEL-NOTI/camiseta-new.png" width="600" height="500">
+            <h4>07 ENERO 2025</h4>
             <h3>Presentación de la nueva Camiseta</h3>   
         </div>
 
         <div>
-            <img src="images/noticiaestadio.jpg" height="300">
-            <h4>14 MARZO 2025</h4>
-            <h3>Se jugará en el Estadio San Marcos</h3>
+            <img src="images/CARRUSEL-NOTI/Estadio_Alberto_Gallardo.jpg" width="600" height="500">
+            <h4>23 AGOSTO 2025</h4>
+            <h3>Se jugará en el Estadio Alberto Gallardo</h3>
         </div>
 
         <div>
-            <img src="images/clausura.jpg" height="300">
+            <img src="images/clausura.jpg" width="600" height="500">
             <h4>31 MARZO 2025</h4>
             <h3>Gran victoria en el Torneo Clausuras</h3>
         </div>
 
         <div>
-            <img src="images/preparativos.png" height="300">
+            <img src="images/preparativos.png"width="600" height="500">
             <h4>20 ENERO 2025</h4>
             <h3>Preparativos para el próximo clásico</h3>
         </div>
 
         <div>
-            <img src="images/invictos.jpeg" height="300">
-            <h4>02 ABRIL 2025</h4>
-            <h3>Invicto en partidos recientes</h3>
+            <img src="images/CARRUSEL-NOTI/CLAUSURA.png" width="600" height="500">
+            <h4>18 AGOSTO 2025</h4>
+            <h3> S.CRISTAL MANTUVO SU INVICTO EN LA FECHA 6 CLAUSURA</h3>
         </div>
 
         <div>
-            <img src="images/juveniles.jpeg" height="300">
-            <h4>19 ABRIL 2025</h4>
-            <h3>Juveniles destacan en los entrenamientos</h3>
+            <img src="images/CARRUSEL-NOTI/SUB17.jpg" width="600" height="500">
+            <h4>17 AGOSTO 2025</h4>
+            <h3>SUB - 17 LA ROMPE</h3>
         </div>
 
         <div>
-            <img src="images/exjugadores.webp" height="300">
-            <h4>08 MAYO 2025</h4>
-            <h3>Reconocimiento a exjugadores históricos</h3>
+            <img src="images/exjugadores.webp" width="600" height="500">
+            <h4>18 DICIEMBRE 2025</h4>
+            <h3>Exjugadores históricos</h3>
         </div>
 
     </div>
@@ -244,10 +244,10 @@ let scrollStart;
 let moved = false; // 🔑 para detectar si fue un arrastre o solo un clic
 
 
-scrollContainer.addEventListener("wheel", (evt) => {
- evt.preventDefault();                                //activa mover con la rueda del mouse 
- scrollContainer.scrollLeft += evt.deltaY;
-});
+// scrollContainer.addEventListener("wheel", (evt) => {
+//  evt.preventDefault();                                //activa mover con la rueda del mouse 
+//  scrollContainer.scrollLeft += evt.deltaY;
+// });
  
 // Mouse drag
 scrollContainer.addEventListener("mousedown", (e) => {
@@ -263,7 +263,7 @@ scrollContainer.addEventListener("mousemove", (e) => {
   if (!isDragging) return;
   e.preventDefault();
   const dx = e.pageX - startX;
-  if (Math.abs(dx) > 20) moved = true; // se considera "arrastre"
+  if (Math.abs(dx) > 0.1) moved = true; // se considera "arrastre"
   scrollContainer.scrollLeft = scrollStart - dx;
 });
 //permite mover con un CLICK sin afectar a las imagenes
