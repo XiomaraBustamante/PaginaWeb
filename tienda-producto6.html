@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Atlético Sport Limeño | Página Oficial</title>
+    <link rel="icon" type="images/png" sizes="32x32" href="images/logo-cristal.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+
+        <!-- INICIO MENU -->
+
+        <ul class="menu">
+
+            <li><a href="index.html"><img src="images/logo-cristal.png" width="60px"></a></li>
+
+            <li><a href="nosotros.html">NOSOTROS</a>
+                <ul class="submenu">
+
+                    <li><a href="nosotros-nh.html">NUESTRA HISTORIA</a></li>
+                    <li><a href="nosotros-ne.html">NUESTRAS INSTALACIONES</a></li>
+                    <li><a href="nosotros-prensa.html">PRENSA</a></li>
+                    <li><a href="nosotros-aac.html">ATENCIÓN AL CLIENTE</a></li>
+                </ul>
+            </li>
+
+            <li><a href="resultados.html">RESULTADOS</a>
+                <ul class="submenu">
+                    
+                    <li><a href="resultados-fixture.html">FIXTURE</a></li>
+                    
+                    <li><a href="resultados-ur.html">ÚLTIMOS RESULTADOS</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="entradas.html">ENTRADAS</a>
+                <ul class="submenu">
+                    <li><a href="entradas-vde.html">VENTA DE ENTRADAS</a></li>
+                   
+                </ul>
+            </li>
+
+            <li><a href="jugadores.html">JUGADORES</a>
+                <ul class="submenu">
+                    <li><a href="jugadores-pe.html">PRIMER EQUIPO</a></li>
+                </ul>
+            </li>
+
+            <li><a href="tienda.html">TIENDA</a>
+                <ul class="submenu">
+                    <li><a href="tienda-productos.html">PRODUCTOS</a></li>
+                    <li><a href="tienda-carrito.html">CARRITO</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+<!-- FIN MENU -->
+
+</header>
+
+<br><br><br><br><br>
+
+<!-- BOTONES INTERACTIVOS + CONTADOR DE PRODUCTOS -->
+<div class="boton5">
+    <a href="tienda-productos.html">VER TODOS LOS PRODUCTOS</a>
+    <a href="tienda-carrito.html" class="carrito-cuenta">
+        IR AL CARRITO
+        <span id="carritoContador">0</span>
+    </a>
+</div>
+
+<!-- ESTRUCTURA DIV -->
+<div class="caja5">
+
+    <!-- ESTRUCTURA PARA CAMBIAR IMAGENES USANDO EVENTOS Y FUNCIONES -->
+    <div class="caja7">
+        <div>
+            <a onclick="cambiarImagenA1()" style="margin: 0 4% 4% 4%;">
+            <img src="images/tienda-carrito/mochila1.jpg">
+            </a>
+            <a onclick="cambiarImagenB1()">
+            <img src="images/tienda-carrito/mochila2.jpg">
+            </a>
+            <a onclick="cambiarImagenC1()">
+            <img src="images/tienda-carrito/mochila3.jpg">
+            </a>
+            <a onclick="cambiarImagenD1()" style="margin: 4% 4% 0 4%;">
+            <img src="images/tienda-carrito/mochila4.jpg">            
+            </a>
+        </div>
+        <img id="imagen1" src="images/tienda-carrito/mochila1.jpg">
+    </div>
+
+    <!-- ESTRUCTURA PARA CAMBIAR LOS ATRIBUTOS DEL OBJETO DEL PRODUCTO -->
+    <div class="caja8">
+        <h3 id="nombre1" style="text-align: left;"></h3>
+        <p id="precioUnidad1" style="margin: 30px 0;"></p>
+        <p id="talla1"></p>
+        <div class="botones-talla">
+            <button onclick="escogerTallaS1()" style="margin: 0 10px 0 0;">S</button>
+            <button onclick="escogerTallaM1()" style="margin: 0 10px 0 10px;">M</button>
+            <button onclick="escogerTallaL1()" style="margin: 0 10px 0 10px;">L</button>
+            <button onclick="escogerTallaXL1()" style="margin: 0 0 0 10px;">XL</button>
+        </div>        
+        <p>Cantidad:</p>
+        <div class="botones-cantidad">
+            <button onclick="disminuirCantidad1()">-</button>
+            <p id="cantidad1">Cantidad: </p>
+            <button onclick="aumentarCantidad1()">+</button>
+        </div>        
+        <p id="precioTotal1" style="margin-top: 30px;"></p>
+        <button onclick="aniadirCarrito1()" class="boton-aniadir">AÑADIR AL CARRITO</button>
+    </div>
+</div>
+
+<script>
+
+    // OBJETO DEL PRODUCTO
+    const producto1 = {
+        nombre: "Mochila Sporting Cristal",
+        talla: "S",
+        precio: 80,
+        cantidad: 1,
+        imagen: "images/tienda-carrito/mochila1.jpg",
+        enlace: "tienda-producto6.html"
+    }
+    let carrito1 = JSON.parse(localStorage.getItem("carrito")) || [];
+
+// ASIGNAR ELEMENTOS EN VARIABLES
+let miNombre1 = document.getElementById("nombre1");
+let miPrecioUnidad1 = document.getElementById("precioUnidad1");
+let miTalla1 = document.getElementById("talla1");
+let miCantidad1 = document.getElementById("cantidad1");
+let miPrecioTotal1 = document.getElementById("precioTotal1");
+let miImagen1 = document.getElementById("imagen1");
+
+let miCarritoNombre1 = document.getElementById("carritoNombre1");
+
+// CAMBIAR CONTENIDO DE LOS ELEMENTOS
+miNombre1.innerHTML = producto1.nombre;
+miPrecioUnidad1.innerHTML = "Precio por unidad: S/. "+producto1.precio;
+miTalla1.innerHTML = "Talla: "+producto1.talla;    
+miCantidad1.innerHTML = producto1.cantidad;
+miPrecioTotal1.innerHTML = "Subtotal: S/. "+producto1.precio;
+
+// CREAR FUNCIONES
+function actualizarContadorCarrito() {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let totalProductos = carrito.reduce((acum, prod) => acum + prod.cantidad, 0);
+    document.getElementById("carritoContador").innerText = totalProductos;
+}
+function cambiarImagenA1(){
+    miImagen1.src = "images/tienda-carrito/mochila1.jpg";
+}
+function cambiarImagenB1(){
+    miImagen1.src = "images/tienda-carrito/mochila2.jpg";
+}
+function cambiarImagenC1(){
+    miImagen1.src = "images/tienda-carrito/mochila3.jpg";
+}
+function cambiarImagenD1(){
+    miImagen1.src = "images/tienda-carrito/mochila4.jpg";
+}
+function escogerTallaS1(){
+    producto1.talla = "S";
+    miTalla1.innerHTML = "Talla: "+producto1.talla;   
+    iluminarBoton("S");
+}
+function escogerTallaM1(){
+    producto1.talla = "M";
+    miTalla1.innerHTML = "Talla: "+producto1.talla;   
+    iluminarBoton("M");
+}
+function escogerTallaL1(){
+    producto1.talla = "L";
+    miTalla1.innerHTML = "Talla: "+producto1.talla;   
+    iluminarBoton("L");
+}
+function escogerTallaXL1(){
+    producto1.talla = "XL";
+    miTalla1.innerHTML = "Talla: "+producto1.talla;   
+    iluminarBoton("XL");
+}
+function iluminarBoton(tallaSeleccionada) {
+    let botones = document.querySelectorAll(".botones-talla button");
+    botones.forEach(boton => {
+        if (boton.innerText === tallaSeleccionada) {
+            boton.classList.add("seleccionado");
+        } else {
+            boton.classList.remove("seleccionado");
+        }
+    });
+}
+window.onload = function() {
+    iluminarBoton(producto1.talla);
+    actualizarContadorCarrito();
+};
+function disminuirCantidad1(){
+if(producto1.cantidad > 1){
+    producto1.cantidad--;
+    miCantidad1.innerHTML = producto1.cantidad;
+    let nuevoPrecio1 = producto1.precio * producto1.cantidad;
+    miPrecioTotal1.innerHTML = "Subtotal: S/. " + nuevoPrecio1;
+    }
+}
+function aumentarCantidad1(){
+    producto1.cantidad++;
+    miCantidad1.innerHTML = producto1.cantidad;
+    let nuevoPrecio1 = producto1.precio * producto1.cantidad;
+    miPrecioTotal1.innerHTML = "Subtotal: S/. " + nuevoPrecio1;
+}
+function aniadirCarrito1() {
+    let nuevoProducto = {
+        nombre: producto1.nombre,
+        talla: producto1.talla,
+        precio: producto1.precio,
+        cantidad: producto1.cantidad,
+        imagen: producto1.imagen,
+        enlace: producto1.enlace
+    };
+
+    // RECUPERA LA INFORMACION DEL CARRITO
+    carrito1 = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // VERIFICA SI EL PRODUCTO TIENE LA MISMA TALLA
+    let existe = carrito1.find(p => p.nombre === nuevoProducto.nombre && p.talla === nuevoProducto.talla);
+
+    if (existe) {
+        existe.cantidad += nuevoProducto.cantidad;
+    } else {
+        carrito1.push(nuevoProducto);
+    }
+
+    // GUARDAR EN LOCAL STORAGE
+    localStorage.setItem("carrito", JSON.stringify(carrito1));
+
+    // MOSTRAR UN MENSAJE
+    alert("Producto añadido al carrito: " + nuevoProducto.nombre + " ("+nuevoProducto.talla+")");
+
+    actualizarContadorCarrito();
+}
+
+</script>
+
+<!-- INICIO FOOTER -->
+
+<footer>
+
+    <img src="images/logo-cristal.png">
+
+    <div>
+        <a href="https://www.facebook.com/"><img src="images/logo-facebook.png"></a>
+        <a href="https://www.instagram.com/"><img src="images/logo-instagram.png"></a>
+        <a href="https://www.x.com/"><img src="images/logo-x.png"></a>
+        <a href="https://www.youtube.com/"><img src="images/logo-youtube.png"></a>
+    </div>
+
+    <p>Copyright &copy; 2025 Club Sporting Cristal. Todos los derechos reservados.</p>
+
+</footer>
+
+<!-- FIN FOOTER -->
+
+</body>
+</html>

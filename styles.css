@@ -1156,3 +1156,312 @@ footer p{
   opacity: 1;
   transition: opacity 0.3s ease;
 }
+
+/* PARTE DAYVIS: TIENDA + CARRITO DE COMPRAS */
+
+/* PARA: TIENDA-PRODUCTOS.HTML */
+.caja10{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* espacio entre productos */
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+.caja10>div{
+    background-color: rgba(60, 190, 239, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+.caja10 img{
+    width: 100%;
+}
+.caja10 img:hover{
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+.caja10 a{
+    text-decoration: none;
+    color: black;
+}
+.caja10 a:hover{
+    text-decoration: underline;
+    color: #D42A2A;
+}
+
+/* PARA: PRODUCTO1, PRODUCTO2, ... , PRODUCTO6 */
+.boton5{
+    margin: 20px 0px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.boton5 a{
+    text-decoration: none;
+    background-color: #D42A2A;
+    color: white;
+    padding: 5px 15px;
+    border: white solid 2px;
+    border-radius: 20px;
+}
+.boton5 a:hover{
+    background-color: rgba(60, 190, 239, 1);
+    border: #F0D145 solid 2px;
+}
+
+.carrito-cuenta{
+    position: relative; 
+}
+
+#carritoContador {
+    position: absolute;
+    bottom: -15px;  
+    right: -15px;  
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border: rgba(60, 190, 239, 1) solid 2px;
+}
+
+.caja5{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(60, 190, 239, 0.2);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.caja7{
+    font-family: dosis;
+    padding: 1.5%;
+    display: flex; /**/
+    width: 70%; /**/
+}
+.caja7>img{
+    width: 70%;  
+    border-radius: 0 10px 10px 0;  
+    margin: 1%;
+}
+.caja7>img:hover{
+    width: 70%;  
+    border-radius: 0 10px 10px 0;  
+    margin: 1%;
+}
+.caja7>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    margin: 1%;
+}
+.caja7 a{
+    width: 100%;
+    margin: 4%;
+}
+.caja7>div>a>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+}
+.caja7>div>a>img:hover{
+    transform: scale(1.1);
+}
+
+.caja8{
+    font-family: dosis;
+    padding: 20px;
+    width: 30%;
+}
+.caja8 h3{
+    font-family: dosis;
+    font-size: 30px;
+}
+.caja8 p{
+    font-family: dosis;
+    font-size: 17px;
+}
+
+.botones-talla{
+    margin-bottom: 30px;
+}
+.botones-talla button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-family: dosis;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    border: rgba(60, 190, 239, 1) solid 2px;
+}
+.botones-talla button.seleccionado {
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(60, 190, 239, 0.8);
+    border: 2px solid rgba(60, 190, 239, 1);
+}
+
+.caja8 .botones-cantidad{
+    display: flex;
+}
+.caja8 .botones-cantidad p{
+    width: 30px;          
+    text-align: center;    
+    margin: 0 10px;       
+    font-family: dosis;
+    font-size: 18px;
+}
+.caja8 .botones-cantidad button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: white;
+    border: rgba(60, 190, 239, 1) solid 2px;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.boton-aniadir{
+    font-family: dosis;
+    font-size: 16px;
+    background-color: rgba(60, 190, 239, 1);
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    border: white solid 2px;
+    border-radius: 20px;
+    margin: 13px 0;
+    cursor: pointer;
+}
+.boton-aniadir:hover{
+    background-color: #D42A2A;
+    border: rgba(60, 190, 239, 1) solid 2px;
+}
+
+/* PARA CARRITO DE COMPRAS */
+.caja6{
+    display: flex; 
+    justify-content: space-between;
+}
+.caja6>div{
+    align-items: center;
+    background-color: rgba(60, 190, 239, 0.2);
+    margin: 20px;
+    border-radius: 20px;
+    padding: 1%;
+}
+.caja6 .botones-cantidad{
+    display: inline-block;
+}
+.caja6 .boton-eliminar{
+    display: block;
+    margin: 6px 0 3px 0;
+}
+.boton-eliminar button{
+    font-family: dosis;
+    font-size: 16px;
+    background-color: rgba(60, 190, 239, 1);
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    border: white solid 2px;
+    border-radius: 20px;
+    margin: 13px 0;
+    cursor: pointer;
+}
+.boton-eliminar button:hover{
+    background-color: #D42A2A;
+    border: rgba(60, 190, 239, 1) solid 2px;
+}
+.mensaje-vacio{
+    display: flex;
+    justify-content: center;   
+    align-items: center;      
+    font-size: 22px;
+    font-weight: 500;
+    color: #555;
+    height: 120px;           
+    text-align: center;
+}
+.carrito-vacio{
+    height: 165px;
+}
+
+#listaCarrito>div{
+    border:2px solid white; 
+    margin:10px; 
+    padding:10px; 
+    border-radius:8px;
+}
+#listaCarrito>div>div{
+    display: flex;
+}
+#listaCarrito>div>div>div{
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+#listaCarrito img{
+    width:20%; 
+    margin-right:15px;
+    border-radius: 10px;
+}
+#listaCarrito a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+#listaCarrito a:hover{
+    text-decoration: underline;
+    color: #D42A2A;
+}
+#listaCarrito .botones-cantidad{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+#listaCarrito .botones-cantidad button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: white;
+    border: rgba(60, 190, 239, 1) solid 2px;
+    font-family: monospace;
+    cursor: pointer;
+}
+#listaCarrito .botones-cantidad p{
+    width: 30px;          
+    text-align: center;    
+    margin: 0 10px;       
+    font-family: dosis;
+    font-size: 18px;
+}
+
+#resumen{
+    height: 100%;
+    margin: 20px;
+}
+#resumen>div{
+    display: flex;
+    justify-content: space-evenly;
+}
+#resumen>div>div{
+    display: inline-block;
+}
+
+#totalProductos{
+    font-style: italic;
+    margin: 20px;
+    font-size: 20px;
+}
+

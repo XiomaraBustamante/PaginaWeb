@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Atlético Sport Limeño | Página Oficial</title>
+    <link rel="icon" type="images/png" sizes="32x32" href="images/logo-cristal.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+
+        <!-- INICIO MENU -->
+
+        <ul class="menu">
+
+            <li><a href="index.html"><img src="images/logo-cristal.png" width="60px"></a></li>
+
+            <li><a href="nosotros.html">NOSOTROS</a>
+                <ul class="submenu">
+
+                    <li><a href="nosotros-nh.html">NUESTRA HISTORIA</a></li>
+                    <li><a href="nosotros-ne.html">NUESTRAS INSTALACIONES</a></li>
+                    <li><a href="nosotros-prensa.html">PRENSA</a></li>
+                    <li><a href="nosotros-aac.html">ATENCIÓN AL CLIENTE</a></li>
+                </ul>
+            </li>
+
+            <li><a href="resultados.html">RESULTADOS</a>
+                <ul class="submenu">
+                    
+                    <li><a href="resultados-fixture.html">FIXTURE</a></li>
+                    
+                    <li><a href="resultados-ur.html">ÚLTIMOS RESULTADOS</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="entradas.html">ENTRADAS</a>
+                <ul class="submenu">
+                    <li><a href="entradas-vde.html">VENTA DE ENTRADAS</a></li>
+                   
+                </ul>
+            </li>
+
+            <li><a href="jugadores.html">JUGADORES</a>
+                <ul class="submenu">
+                    <li><a href="jugadores-pe.html">PRIMER EQUIPO</a></li>
+                </ul>
+            </li>
+
+            <li><a href="tienda.html">TIENDA</a>
+                <ul class="submenu">
+                    <li><a href="tienda-productos.html">PRODUCTOS</a></li>
+                    <li><a href="tienda-carrito.html">CARRITO</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+<!-- FIN MENU -->
+
+</header>
+
+<br><br><br><br><br>
+
+<div class="texto">
+    <h2>NUESTROS PRODUCTOS</h2>
+    <p>
+        En esta sección te mostramos todo lo relacionado a la tienda oficial de Club Sporting Cristal, donde podrás adquirir la camiseta oficial 2025, ropa de entrenamiento, accesorios y otros productos exclusivos del equipo. Descubre los precios, puntos de venta y opciones de compra en línea para que lleves contigo la pasión por el club a donde vayas. ¡Viste los colores de Sporting Cristal y apoya al equipo con orgullo!
+    </p>
+</div>
+
+<!-- ESTRUCTURA DE LAS MINIATURAS DE LOS PRODUCTOS -->
+<div class="caja10">
+    <div>
+        <a href="tienda-producto1.html">
+        <img id="imagen1">
+        </a>
+        <a href="tienda-producto1.html">
+            <h3 id="titulo1"></h3>
+        </a>
+            <p id="precio1">Precio: S/. </p>         
+    </div>
+
+    <div>
+        <a href="tienda-producto2.html">
+        <img id="imagen2">
+        </a>
+        <a href="tienda-producto2.html">
+            <h3 id="titulo2"></h3>
+        </a>
+            <p id="precio2">Precio: S/. </p>   
+    </div>
+
+    <div>
+        <a href="tienda-producto3.html">
+        <img id="imagen3">
+        </a>
+        <a href="tienda-producto3.html">
+            <h3 id="titulo3"></h3>
+        </a>
+            <p id="precio3">Precio: S/. </p>
+    </div>
+
+    <div>
+        <a href="tienda-producto4.html">
+        <img id="imagen4">
+        </a>
+        <a href="tienda-producto4.html">
+            <h3 id="titulo4"></h3>
+        </a>
+            <p id="precio4">Precio: S/. </p>         
+    </div>
+
+    <div>
+        <a href="tienda-producto5.html">
+        <img id="imagen5">
+        </a>
+        <a href="tienda-producto5.html">
+            <h3 id="titulo5"></h3>
+        </a>
+            <p id="precio5">Precio: S/. </p>   
+    </div>
+
+    <div>
+        <a href="tienda-producto6.html">
+        <img id="imagen6">
+        </a>
+        <a href="tienda-producto6.html">
+            <h3 id="titulo6"></h3>
+        </a>
+            <p id="precio6">Precio: S/. </p>
+    </div>
+</div>
+
+<script>
+
+    // ARREGLO DE OBJETOS DE LOS PRODUCTOS
+    const productos = [
+        {
+        nombre: "Camiseta titular 2025",
+        talla: "S",
+        precio: 200,
+        cantidad: 1,
+        imagen: "images/tienda-carrito/camiseta-titular1.jpg"
+    },
+    {
+        nombre: "Camiseta suplente 2025",
+        talla: "S",
+        precio: 150,
+        cantidad: 1,
+        imagen: "images/tienda-carrito/camiseta-suplente1.jpg"
+    },
+    {
+        nombre: "Polera con capucha Sporting Cristal",
+        talla: "S",
+        precio: 250,
+        cantidad: 1,
+        imagen: "images/tienda-carrito/polera-capucha1.jpg"
+    },
+    {
+        nombre: "Short titular 2025",
+        talla: "S",
+        precio: 120,
+        cantidad: 1,
+        imagen: "images/tienda-carrito/short1.jpg"
+    },
+    {
+        nombre: "Gorro Sporting Cristal Team",
+        talla: "S",
+        precio: 70,
+        cantidad: 1,
+        imagen: "images/tienda-carrito/gorro1.jpg"
+    },
+    {
+        nombre: "Mochila Sporting Cristal",
+        talla: "S",
+        precio: 80,
+        cantidad: 1,
+        imagen: "images/tienda-carrito/mochila1.jpg"
+    }
+    ]
+
+    // ASIGNARLE UNA VARIABLE A CIERTOS ELEMENTOS
+    let miTitulo1 = document.getElementById("titulo1");
+    let miPrecio1 = document.getElementById("precio1");
+    let miImagen1 = document.getElementById("imagen1");
+
+    let miTitulo2 = document.getElementById("titulo2");
+    let miPrecio2 = document.getElementById("precio2");
+    let miImagen2 = document.getElementById("imagen2");
+
+    let miTitulo3 = document.getElementById("titulo3");
+    let miPrecio3 = document.getElementById("precio3");
+    let miImagen3 = document.getElementById("imagen3");
+
+    let miTitulo4 = document.getElementById("titulo4");
+    let miPrecio4 = document.getElementById("precio4");
+    let miImagen4 = document.getElementById("imagen4");
+
+    let miTitulo5 = document.getElementById("titulo5");
+    let miPrecio5 = document.getElementById("precio5");
+    let miImagen5 = document.getElementById("imagen5");
+
+    let miTitulo6 = document.getElementById("titulo6");
+    let miPrecio6 = document.getElementById("precio6");
+    let miImagen6 = document.getElementById("imagen6");
+
+
+    // INGRESAR CONTENIDO A LOS ELEMENTOS
+    miTitulo1.innerHTML = productos[0].nombre;
+    miPrecio1.innerHTML = "Precio: S/. "+productos[0].precio;
+    miImagen1.src = productos[0].imagen;
+
+    miTitulo2.innerHTML = productos[1].nombre;
+    miPrecio2.innerHTML = "Precio: S/. "+productos[1].precio;
+    miImagen2.src = productos[1].imagen;
+
+    miTitulo3.innerHTML = productos[2].nombre;
+    miPrecio3.innerHTML = "Precio: S/. "+productos[2].precio;
+    miImagen3.src = productos[2].imagen;
+
+    miTitulo4.innerHTML = productos[3].nombre;
+    miPrecio4.innerHTML = "Precio: S/. "+productos[3].precio;
+    miImagen4.src = productos[3].imagen;
+
+    miTitulo5.innerHTML = productos[4].nombre;
+    miPrecio5.innerHTML = "Precio: S/. "+productos[4].precio;
+    miImagen5.src = productos[4].imagen;
+
+    miTitulo6.innerHTML = productos[5].nombre;
+    miPrecio6.innerHTML = "Precio: S/. "+productos[5].precio;
+    miImagen6.src = productos[5].imagen;
+
+</script>
+
+<!-- INICIO FOOTER -->
+
+<footer>
+
+    <img src="images/logo-cristal.png">
+
+    <div>
+        <a href="https://www.facebook.com/"><img src="images/logo-facebook.png"></a>
+        <a href="https://www.instagram.com/"><img src="images/logo-instagram.png"></a>
+        <a href="https://www.x.com/"><img src="images/logo-x.png"></a>
+        <a href="https://www.youtube.com/"><img src="images/logo-youtube.png"></a>
+    </div>
+
+    <p>Copyright &copy; 2025 Club Sporting Cristal. Todos los derechos reservados.</p>
+
+</footer>
+
+<!-- FIN FOOTER -->
+
+</body>
+</html>

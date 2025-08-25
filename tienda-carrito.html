@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Atlético Sport Limeño | Página Oficial</title>
+    <link rel="icon" type="images/png" sizes="32x32" href="images/logo-cristal.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+
+        <!-- INICIO MENU -->
+
+        <ul class="menu">
+
+            <li><a href="index.html"><img src="images/logo-cristal.png" width="60px"></a></li>
+
+            <li><a href="nosotros.html">NOSOTROS</a>
+                <ul class="submenu">
+
+                    <li><a href="nosotros-nh.html">NUESTRA HISTORIA</a></li>
+                    <li><a href="nosotros-ne.html">NUESTRAS INSTALACIONES</a></li>
+                    <li><a href="nosotros-prensa.html">PRENSA</a></li>
+                    <li><a href="nosotros-aac.html">ATENCIÓN AL CLIENTE</a></li>
+                </ul>
+            </li>
+
+            <li><a href="resultados.html">RESULTADOS</a>
+                <ul class="submenu">
+                    
+                    <li><a href="resultados-fixture.html">FIXTURE</a></li>
+                    
+                    <li><a href="resultados-ur.html">ÚLTIMOS RESULTADOS</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="entradas.html">ENTRADAS</a>
+                <ul class="submenu">
+                    <li><a href="entradas-vde.html">VENTA DE ENTRADAS</a></li>
+                   
+                </ul>
+            </li>
+
+            <li><a href="jugadores.html">JUGADORES</a>
+                <ul class="submenu">
+                    <li><a href="jugadores-pe.html">PRIMER EQUIPO</a></li>
+                </ul>
+            </li>
+
+            <li><a href="tienda.html">TIENDA</a>
+                <ul class="submenu">
+                    <li><a href="tienda-productos.html">PRODUCTOS</a></li>
+                    <li><a href="tienda-carrito.html">CARRITO</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+<!-- FIN MENU -->
+
+</header>
+
+<br><br><br><br><br>
+
+<h2>Mi Carrito</h2>
+
+<!-- CONTADOR DEL TOTAL DE PRODUCTOS -->
+<p id="totalProductos"></p>
+
+<!-- ESTRUCTURA DIV QUE DIVIDE EN DOS PARTES LA PAGINA-->
+<div class="caja6">
+    <div id="listaCarrito" style="width: 66%;"></div>
+    <div id="resumen" style="width: 33%;"></div>
+</div>
+
+<script>
+
+    // SE OBTIENE LOS DATOS GUARDADOS DEL CARRITO MEDIANTE LOCAL STORAGE
+    function obtenerCarrito() {
+        return JSON.parse(localStorage.getItem("carrito")) || [];
+    }
+
+    // ACTUALIZA LA PAGINA DEPENDIENDO LAS ACCIONES QUE SE REALICE Y LAS CONDICIONES
+    function renderizarCarrito() {
+
+        // GUARDA EN UNA VARIABLE LOS DATOS OBTENIDOS DE CARRITO
+        let carritoGuardado = obtenerCarrito();
+
+        // GUARDA EN VARIABLES LOS ELEMENTOS DEL DOCUMENTO
+        let miListaCarrito = document.getElementById("listaCarrito");
+        let miResumen = document.getElementById("resumen");
+        let miTotalProductos = document.getElementById("totalProductos");
+
+        // SE ASIGNA VALORES INICIALES
+        miListaCarrito.innerHTML = "";
+        miResumen.innerHTML = "";
+        let total = 0;
+        let totalProductos = 0;
+
+        // SE AGREGA UNA CONDICIONAL EN CASO NO HAYAN PRODUCTOS AGREGADOS AL CARRITO
+        if (carritoGuardado.length === 0) {
+            miListaCarrito.innerHTML = `<p class="mensaje-vacio">No hay ningún producto en el carrito</p>`;
+            miResumen.innerHTML = `
+            <div class="carrito-vacio">
+                <img src="images/tienda-carrito/tienda-no-carrito.png" style="max-width: 200px; display: block; margin: 20px auto;">
+            </div>
+            `;
+            miTotalProductos.innerText = "❌ 🛒";
+            return;
+        }
+
+        // SE AGREGA UN FOR EACH PARA CAMBIAR EL CONTENIDO DEL DOCUMENTO AGREGANDO ELEMENTOS QUE DEPENDEN DE LO QUE SE OBTIENE DEL CARRITO USANDO LOCAL STORAGE
+        carritoGuardado.forEach((producto, index) => {
+            let subtotal = producto.precio * producto.cantidad;
+            total += subtotal;
+            totalProductos += producto.cantidad;
+
+            miListaCarrito.innerHTML += `
+                <div id="producto-${index}">
+                    <div>
+                        <img src="${producto.imagen}">
+                        <div>
+                            <div>
+                                <p>
+                                    <a href="${producto.enlace}">${producto.nombre}</a>
+                                </p>
+                                <p>Talla: ${producto.talla}</p>
+                            </div>
+                            <div>
+                                <p>Precio por unidad</p>
+                                <p>S/. ${producto.precio}</p>
+                            </div>
+                            <div>
+                                <p>Cantidad</p>
+                                <div class="botones-cantidad">
+                                    <button onclick="disminuirCantidad(${index})">-</button>
+                                    <p style="display: inline;" id="cantidad-${index}">${producto.cantidad}</p>
+                                    <button onclick="aumentarCantidad(${index})">+</button>
+                                </div>  
+                                <div class="boton-eliminar">
+                                    <button onclick="eliminarProducto(${index})">Eliminar</button>
+                                <div>                                                  
+                            </div>         
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // SE AGREGA CONTENIDO DE UNA ESTRUCTURA AL DOCUMENTO 
+        miResumen.innerHTML = `
+            <h3>Resumen de la compra</h3>
+            <div>
+                <div><p>Precio total:</p></div>
+                <div><p>S/. ${total}</p></div>
+            </div>
+            <div class="boton2">
+                <a href="formulario.html">CONTINUAR COMPRA</a>
+            </div>
+        `;
+
+        // CAMBIA EL CONTENIDO INDICANDO EL NUMERO TOTAL DE PRODUCTOS
+        miTotalProductos.innerText = totalProductos + " PRODUCTO(S)";
+
+        // HACE QUE SIEMPRE SE GUARDEN LOS CAMBIOS
+        localStorage.setItem("carrito", JSON.stringify(carritoGuardado));
+    }
+
+    function aumentarCantidad(index) {
+        let carrito = obtenerCarrito();
+        carrito[index].cantidad++;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        renderizarCarrito();
+    }
+
+    function disminuirCantidad(index) {
+        let carrito = obtenerCarrito();
+        if (carrito[index].cantidad > 1) {
+            carrito[index].cantidad--;
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        }
+        renderizarCarrito();
+    }
+
+    function eliminarProducto(index) {
+        let carrito = obtenerCarrito();
+        carrito.splice(index, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito)); // 🔹 Actualizar siempre el localStorage
+        renderizarCarrito();
+    }
+
+    // ACTUALIZACION DEL CARRITO
+    renderizarCarrito();
+    
+</script>
+
+<!-- INICIO FOOTER -->
+
+<footer>
+
+    <img src="images/logo-cristal.png">
+
+    <div>
+        <a href="https://www.facebook.com/"><img src="images/logo-facebook.png"></a>
+        <a href="https://www.instagram.com/"><img src="images/logo-instagram.png"></a>
+        <a href="https://www.x.com/"><img src="images/logo-x.png"></a>
+        <a href="https://www.youtube.com/"><img src="images/logo-youtube.png"></a>
+    </div>
+
+    <p>Copyright &copy; 2025 Club Sporting Cristal. Todos los derechos reservados.</p>
+
+</footer>
+
+<!-- FIN FOOTER -->
+
+</body>
+</html>
