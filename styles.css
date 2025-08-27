@@ -109,24 +109,7 @@ h4{
 
 
 
-
-
-
-/* Intenta aplicar outline: none de forma más específica a todos los elementos que pueden ser enfocados dentro de tu carrusel. */
-.caja1 > div,
-.caja1 > div img,
-.caja1 > div h4,
-.caja1 > div h3,
-.caja1.activo {
-    outline: none !important;
-}
-
-/* También, verifica el estilo en el estado de foco. */
-.caja1:focus-within,
-.caja1 > div:focus-within {
-    outline: none !important;
-}
-
+/*INICIO DE CARRUSEL DE ULTIMAS NOTICIAS */
 .caja1{
     text-align: center;
     display: flex;
@@ -149,7 +132,6 @@ h4{
 .caja1 img{
     width: 560px;
     border-radius: 15px;
-    /* filter: grayscale(100%); */
     transition: transform 0.5s, filter 0.5s;
 }
 .caja1 h4{
@@ -171,21 +153,7 @@ h4{
   cursor: grabbing;
   outline-offset: 0px!important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*FIN DE CARRUSEL DE ULTIMAS NOTICIAS */
 .caja2{
     display: flex;
     justify-content: space-evenly;
@@ -212,8 +180,7 @@ h4{
     object-fit: cover;
     border-radius: 10px;
 }
-
-
+/*INICIO DE NUESTRA HISTORIA */
 .cont-NH{
   width: 100%;
   margin: 20px auto;
@@ -264,6 +231,9 @@ h4{
 .imges img:hover {
   transform: scale(1.05);
 }
+/*FIN  DE NUESTRA HISTORIA */
+
+
 .caja3{
     display: flex;
     justify-content: space-evenly;
@@ -748,7 +718,7 @@ footer p{
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* PARTE DEL CARRUSEL */
+/*****************************PARTE DEL CARRUSEL BANNER ANDRES**********************/
 .carousel-container {
   position: relative;
   max-width: 100%;
@@ -795,11 +765,6 @@ footer p{
   border-radius: 50%;
   display: inline-block;
 }
-
-/* .active, .dot:hover {
-  background-color: #717171; // el culpable del cuadro gris al hacer click
-} */
-
 .fade {
   animation: fadeEffect 1s;
 }
@@ -809,7 +774,7 @@ footer p{
   to {opacity: 1;}
 }
 
-/* FIN PARTE DE CARRUSEL*/
+/************************ FIN PARTE DE CARRUSEL BANNER ANDRES *******************/
 
 .contenedor-cartas {
   display: flex;

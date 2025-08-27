@@ -76,7 +76,8 @@
 
 
     <!-- FIN HEADER -->
-    
+ <!--------------------INICIO  PROMPT HTML ------------------>
+
 <div class="carousel-container">
   <div class="carousel">
     <div class="carousel-slide fade">
@@ -87,9 +88,10 @@
     <button onclick="saludar()">Enviar</button>
   </div>
 </div>
+<!--------------------FIN  PROMPT HTML ------------------>
+<!--------------------INICIO  CARRUSEL BANER HTML ANDRES ------------------>
 
-
-    <div class="carousel-slide fade">
+      <div class="carousel-slide fade">
       <img src="images/carrusel_img2.png" alt="Imagen 2">
     </div>
     <div class="carousel-slide fade">
@@ -112,39 +114,8 @@
     <span class="dot" onclick="currentSlide(4)"></span>
   </div>
 </div>
-<script>
-    let slideIndex = 1;
-showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  const slides = document.getElementsByClassName("carousel-slide");
-  const dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].classList.remove("active");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].classList.add("active");
-}
-
-// Opcional: pasar automáticamente cada 5 segundos
-setInterval(() => plusSlides(1), 9500);
-</script>
-
-<!-- XIOMARAAA -->
+<!--------------------INICIO  PROMPT SCRIPT ------------------>
 <script>
 function saludar() {
   const nombre = document.getElementById("nombre").value.trim();
@@ -169,8 +140,89 @@ function saludar() {
   }
 }
 </script>
+<!--------------------FIN  PROMPT SCRIPT ------------------>
+<!--------------------INICIO  CARRUSEL BANER SCRIPT ANDRES ------------------>
+<script>
+// Definimos una variable 'slideIndex' que guarda el índice de la diapositiva actual.
+// Empezamos en 1 porque a menudo los humanos contamos desde 1, no desde 0.
+let slideIndex = 1;
 
-    <!-------------------------- INICIO ÚLTIMAS NOTICIAS STEFANO -------------------->
+// Llamamos a la función 'showSlides' para mostrar la primera FOTO al cargar la página.
+showSlides(slideIndex);
+
+// ---
+// 1. Función para avanzar o retroceder FOTOS (al hacer clic en las flechas).
+// ---
+function plusSlides(n) {
+  // 'n' será 1 para avanzar o -1 para retroceder.
+  // Sumamos 'n' al índice actual y llamamos a 'showSlides' para actualizar.
+  showSlides(slideIndex += n);
+}
+
+// ---
+// 2. Función para ir a una FOTO específica (al hacer clic en los puntos).
+// ---
+function currentSlide(n) {
+  // 'n' es el número de la FOTO a la que queremos ir.
+  // Asignamos 'n' a 'slideIndex' y llamamos a 'showSlides'.
+  showSlides(slideIndex = n);
+}
+
+// ---
+// 3. Función principal que muestra la diapositiva correcta.
+// ---
+function showSlides(n) {
+  let i;
+  // Obtenemos todos los elementos con la clase "carousel-slide" (las imágenes).
+  const slides = document.getElementsByClassName("carousel-slide");
+  // Obtenemos todos los elementos con la clase "dot" (los puntos indicadores).
+  const dots = document.getElementsByClassName("dot");
+
+  // 3a. Lógica de bucle infinito.
+  // ---
+  // Si el índice es mayor que el número de diapositivas, volvemos a la primera.
+  // Esto crea un bucle.
+  if (n > slides.length) {slideIndex = 1}
+  // Si el índice es menor que 1, vamos a la última diapositiva.
+  // Esto también crea un bucle.
+  if (n < 1) {slideIndex = slides.length}
+  
+
+  // 3b. Ocultar todas las diapositivas.
+  // ---
+  // bucle que asegura que todas las FOTOS estén ocultas(establecemos 'display' a 'none').
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // ---
+  // 3c. Desactivar todos los puntos.
+  // ---
+  // BUCLE sobre todos los puntos y les quitamos la clase "active".
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }      
+
+  // ---
+  // 3d. Mostrar la FOTO y el punto correcto.
+  // ---
+  // Mostramos solo la FOTO con el índice correcto.
+  // Usamos 'slideIndex - 1' porque los arrays de JavaScript empiezan en el índice 0.
+  slides[slideIndex-1].style.display = "block";
+  // Añadimos la clase "active" al punto correspondiente para resaltarlo.
+  dots[slideIndex-1].classList.add("active");
+}
+
+// ---
+// 4. Navegación automática (Opcional).
+// ---
+// Usamos 'setInterval' para ejecutar la función 'plusSlides(1)' cada 9.5 segundos.
+// Esto hace que el carrusel avance automáticamente.
+setInterval(() => plusSlides(1), 5500);
+</script>
+<!--------------------FIN CARRUSEL BANER ANDRES ------------------>
+
+    <!-------------------------- INICIO ÚLTIMAS NOTICIAS ANDRES -------------------->
 
    <h2  data-aos="fade-up">ÚLTIMAS NOTICIAS</h2>
 <div class="flechas-stefano">
@@ -234,67 +286,113 @@ function saludar() {
     </div>
 
 
-<!--------------- INICIO DE JAVASCRIPT-STEFANO ------------------->
+<!--------------- INICIO DE JAVASCRIPT-ANDRES ------------------->
 <script>
+// Este es el contenedor principal que haremos arrastrar
+// Lo seleccionamos usando la clase 'caja1' y lo guardamos en una variable.
 const scrollContainer = document.querySelector(".caja1");
 
-let isDragging = false;
-let startX;
-let scrollStart;
-let moved = false; // 🔑 para detectar si fue un arrastre o solo un clic
-
+// Estas variables son cruciales para el funcionamiento del arrastre.
+let isDragging = false;   //se usa para saber si el usuario tiene presionado el botón del mouse.
+let startX;               //guarda la posición inicial del mouse cuando el arrastre comienza.
+let scrollStart;          // guarda la posición de desplazamiento inicial del contenedor.
+let moved = false;        // es una clave 🔑 que nos ayuda a diferenciar entre un simple clic y un arrastre real.
 
 // scrollContainer.addEventListener("wheel", (evt) => {
 //  evt.preventDefault();                                //activa mover con la rueda del mouse 
 //  scrollContainer.scrollLeft += evt.deltaY;
 // });
- 
-// Mouse drag
-scrollContainer.addEventListener("mousedown", (e) => {
+
+// A continuación, se definen los "event listeners", que son funciones
+// que se ejecutan cuando ocurre un evento específico del mouse.
+scrollContainer.addEventListener("mousedown", (e) => {// 1. Evento 'mousedown' (cuando el botón del mouse se presiona) 
+  // Cuando el mouse se presiona, el arrastre comienza.
   isDragging = true;
+  // Reiniciamos 'moved' a falso para este nuevo arrastre.
   moved = false;
+  // Agregamos una clase CSS para, por ejemplo, cambiar el cursor y
+  // dar una indicación visual de que el elemento está activo.
   scrollContainer.classList.add("activo");
+  // Guarda la posición X del mouse en el momento del clic.
   startX = e.pageX;
+  // Guarda la posición de desplazamiento actual del contenedor.
   scrollStart = scrollContainer.scrollLeft;
-  
 });
 
+// ---
+// 2. Evento 'mousemove' (cuando el mouse se mueve)
+// ---
 scrollContainer.addEventListener("mousemove", (e) => {
+  // Si no estamos arrastrando (isDragging es falso), salimos de la función inmediatamente.
+  // Esto evita que el código se ejecute cuando no es necesario.
   if (!isDragging) return;
+  // 'e.preventDefault()' es muy importante. Evita el comportamiento por defecto del navegador,
+  // como la selección de texto o el arrastre de elementos.
   e.preventDefault();
+  // Calculamos la distancia que el mouse se ha movido desde el punto de inicio.
   const dx = e.pageX - startX;
-  if (Math.abs(dx) > 0.1) moved = true; // se considera "arrastre"
+  // Si la distancia movida es mayor a un valor pequeño (0.1 píxeles),
+  // consideramos que es un arrastre real y no un clic accidental.
+  if (Math.abs(dx) > 0.1) moved = true;
+  // Actualizamos la posición de desplazamiento del contenedor.
+  // Restamos 'dx' para que el desplazamiento vaya en la dirección opuesta al movimiento del mouse.
   scrollContainer.scrollLeft = scrollStart - dx;
 });
-//permite mover con un CLICK sin afectar a las imagenes
+
+// ---
+// 3. Bloque para evitar arrastrar imágenes
+// ---
+// Seleccionamos todas las imágenes dentro del contenedor.
 scrollContainer.querySelectorAll("img").forEach(img => {
-  img.setAttribute("draggable", "false"); // evita arrastrar imagen
+  // Desactivamos la propiedad 'draggable' de cada imagen.
+  // Esto evita que el navegador muestre el icono de "arrastrar imagen"
+  // y permite que nuestro propio evento de arrastre funcione sin interferencias.
+  img.setAttribute("draggable", "false");
 });
 
-
+// ---
+// 4. Evento 'mouseup' (cuando el botón del mouse se suelta)
+// ---
 scrollContainer.addEventListener("mouseup", (e) => {
+  // Quitamos la clase CSS 'activo' para que el estilo del contenedor vuelva a la normalidad.
   scrollContainer.classList.remove("activo");
-  if (moved) e.preventDefault(); // evitar clics accidentales
+  // Si 'moved' es verdadero, significa que hubo un arrastre.
+  // En este caso, 'e.preventDefault()' evita que se dispare el evento 'click'
+  // en los elementos que se encuentran debajo del puntero del mouse al soltarlo.
+  if (moved) e.preventDefault();
+  // El arrastre ha terminado, así que volvemos a poner 'isDragging' en falso.
   isDragging = false;
 });
 
+// ---
+// 5. Evento 'mouseleave' (cuando el cursor sale del contenedor)
+// ---
 scrollContainer.addEventListener("mouseleave", () => {
+  // Si el usuario suelta el mouse fuera del contenedor, este evento asegura
+  // que el arrastre se detenga correctamente.
   isDragging = false;
   scrollContainer.classList.remove("activo");
 });
 
-// Evitar clics accidentales durante el arrastre
+// ---
+// 6. Bloque final para evitar clics accidentales
+// ---
 scrollContainer.addEventListener("click", (e) => {
+  // Si la variable 'moved' es verdadera, significa que el usuario arrastró
+  // el contenedor en lugar de simplemente hacer clic.
+  // En este caso, 'e.preventDefault()' evita que el evento de clic se propague.
+  // Esto es útil para prevenir que se abran enlaces o se activen botones
+  // accidentalmente después de un arrastre.
   if (moved) e.preventDefault();
 });
-
 </script>
 
-<!--------------- FIN DE JAVASCRIPT-STEFANO ------------------->    
+<!--------------- FIN DE JAVASCRIPT-ANDRES ------------------->    
 
-  
 
-    <!-------------------------------------- FIN ÚLTIMAS NOTICIAS STEFANO -------------------------------------->
+<!-------------- FIN ÚLTIMAS NOTICIAS ANDRES ----------------->
+
+
 
     <!-- INICIO NUESTRO PRÓXIMO PARTIDO XIOMARA -->
      <div class="contador-container">
