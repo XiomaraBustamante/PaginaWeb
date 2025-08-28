@@ -588,14 +588,18 @@ const cuerpoTecnico=[
   }
 ];
 
+//primero cargamos todo lo que contiene el html, luego creamos dos variables que contengan los id de los contenedores 
+
 document.addEventListener('DOMContentLoaded', () => {
     //obtener los id del jugador y cuerportecnico
   const contenedorJugadores = document.getElementById('contenedorJugadores');
   const contenedorCuerpoTecnico = document.getElementById('contenedorCuerpoTecnico');
 
-  // Mostrar jugadores, recorre el arreglo con for each
-  //jugador es una variable que representa a cada elemento del arreglo
-  //con la funcion creo la carta de un jugador y al final la muestro con append
+  // Aca recorremos el arreglo equipo con for each
+  //luego creamos un fucion donde jugador es una variable que representa a cada elemento del arreglo
+  //Aquí se llama a la función crearCarta, pasándole el objeto jugador como parámetro.
+  //esto nos devuelve ya la carta creada y se guardara en la variable que la creamos
+  //y al final la muestro con append
   equipo.forEach(jugador => {
     const carta = crearCarta(jugador);
     contenedorJugadores.appendChild(carta);
@@ -608,8 +612,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   //Accion para que se volten las cartas
-  //primjero seleccionamos todas las cartas que tengan la clase .contenedorCarta
-  //cuando le debemos clik toggle hace que gire su posicion 
+  //primero seleccionamos todas las cartas que tengan la clase .contenedorCarta con querySelectorAll el cual creara una especie de arreglo
+  //luego la almacenamos en la variable cartas y lo recorremos con for each 
+  //añadimos el evento de cuando se haga click la carta se volte
+  //cuando le debemos clik toggle rrevisa que la clase flipped este puesta si no esta la agrega y si esta la quita 
   const cartas = document.querySelectorAll('.contenedorCarta');
   cartas.forEach(carta => {
     carta.addEventListener('click', () => {
@@ -618,7 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Crear una carta, a la funcion crearcarta le paso como parametro un nombre que represente a persona y jugador
+// funcion Crear una carta, a la funcion crearcarta le paso como parametro un nombre que represente a persona y jugador
 function crearCarta(persona) {
   const carta = document.createElement('div');
   carta.className = 'contenedorCarta';
@@ -644,3 +650,6 @@ function crearCarta(persona) {
   `;
   return carta;
 }
+
+
+//poo
