@@ -75,34 +75,52 @@
 <h2>PRÓXIMOS PARTIDOS</h2>
 <div class="FondoPartidos">
 
-  <!-- Partido 1 -->
-  <div class="partido" data-ciudad="Lima,PE" data-fecha="2025-08-20T15:00:00">
+  <!-- Partido 1 - FECHA 28 AGOSTO -->
+  <div class="partido" data-ciudad="Lima,PE" data-fecha="2025-08-28T15:00:00">
     <div class="equipo">
       <img src="images/Logos/cristal.png" alt="Sporting Cristal">
       <div class="nombreEquipo">Sporting Cristal</div>
     </div>
     <div class="info">
-      <div class="clima"></div>
-      <h3>FECHA 1</h3>
-      <p>20 AGOSTO 2025 - 3:00 p.m.</p>
-      <p>Estadio Monumental “U” – Lima</p>
+      <div class="clima"></div> <!-- Aquí aparecerá el clima -->
+      <h3>FECHA 5</h3>
+      <p>28 AGOSTO 2025 - 3:00 p.m.</p>
+      <p>Estadio Nacional – Lima</p>
     </div>
     <div class="equipo">
-      <img src="images/Logos/Universitario.png" alt="Universitario">
-      <div class="nombreEquipo">Universitario</div>
+      <img src="images/Logos/Alianzalima.png" alt="Alianza Lima">
+      <div class="nombreEquipo">Alianza Lima</div>
     </div>
   </div>
 
-  <!-- Partido 2 -->
-  <div class="partido" data-ciudad="Arequipa,PE" data-fecha="2025-08-22T19:00:00">
+  <!-- Partido 2 - FECHA 29 AGOSTO -->
+  <div class="partido" data-ciudad="Cusco,PE" data-fecha="2025-08-29T19:00:00">
+    <div class="equipo">
+      <img src="images/Logos/cuscofc.png" alt="Cusco FC">
+      <div class="nombreEquipo">Cusco FC</div>
+    </div>
+    <div class="info">
+      <div class="clima"></div>
+      <h3>FECHA 6</h3>
+      <p>29 AGOSTO 2025 - 7:00 p.m.</p>
+      <p>Estadio Inca Garcilaso de la Vega – Cusco</p>
+    </div>
+    <div class="equipo">
+      <img src="images/Logos/cristal.png" alt="Sporting Cristal">
+      <div class="nombreEquipo">Sporting Cristal</div>
+    </div>
+  </div>
+
+  <!-- Partido 3 - FECHA 31 AGOSTO -->
+  <div class="partido" data-ciudad="Arequipa,PE" data-fecha="2025-08-31T16:00:00">
     <div class="equipo">
       <img src="images/Logos/melgar.png" alt="FBC Melgar">
       <div class="nombreEquipo">FBC Melgar</div>
     </div>
     <div class="info">
       <div class="clima"></div>
-      <h3>FECHA 2</h3>
-      <p>22 AGOSTO 2025 - 7:00 p.m.</p>
+      <h3>FECHA 7</h3>
+      <p>31 AGOSTO 2025 - 4:00 p.m.</p>
       <p>Estadio Monumental de la UNSA – Arequipa</p>
     </div>
     <div class="equipo">
@@ -111,34 +129,16 @@
     </div>
   </div>
 
-  <!-- Partido 3 -->
-  <div class="partido" data-ciudad="Lima,PE" data-fecha="2025-08-25T13:00:00">
-    <div class="equipo">
-      <img src="images/Logos/cristal.png" alt="Sporting Cristal">
-      <div class="nombreEquipo">Sporting Cristal</div>
-    </div>
-    <div class="info">
-      <div class="clima"></div>
-      <h3>FECHA 3</h3>
-      <p>25 AGOSTO 2025 - 1:00 p.m.</p>
-      <p>Estadio Alberto Gallardo – Lima</p>
-    </div>
-    <div class="equipo">
-      <img src="images/Logos/cienciano.png" alt="Cienciano">
-      <div class="nombreEquipo">Cienciano</div>
-    </div>
-  </div>
-
-  <!-- Partido 4 -->
-  <div class="partido" data-ciudad="Trujillo,PE" data-fecha="2025-08-27T20:00:00">
+  <!-- Partido 4 - FECHA 01 SEPTIEMBRE -->
+  <div class="partido" data-ciudad="Trujillo,PE" data-fecha="2025-09-01T20:00:00">
     <div class="equipo">
       <img src="images/Logos/cesarvallejo.png" alt="César Vallejo">
       <div class="nombreEquipo">César Vallejo</div>
     </div>
     <div class="info">
       <div class="clima"></div>
-      <h3>FECHA 4</h3>
-      <p>27 AGOSTO 2025 - 8:00 p.m.</p>
+      <h3>FECHA 8</h3>
+      <p>01 SEPTIEMBRE 2025 - 8:00 p.m.</p>
       <p>Estadio Mansiche – Trujillo</p>
     </div>
     <div class="equipo">
@@ -170,30 +170,34 @@
 <script>
 const API_KEY = "edb2071777ddc6fdf4f90c3f545bbdda";
 
-// Función para cada partido
+// Recorremos todos los divs con clase "partido"
 document.querySelectorAll(".partido").forEach(partido => {
+  // Extraemos la ciudad y fecha objetivo de cada partido
   const ciudad = partido.getAttribute("data-ciudad");
   const fechaObjetivo = partido.getAttribute("data-fecha").split("T")[0]; // YYYY-MM-DD
-  const climaDiv = partido.querySelector(".clima");
+  const climaDiv = partido.querySelector(".clima"); // Contenedor para mostrar clima
 
+  // Llamamos a la API de OpenWeather con la ciudad del partido
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&appid=${API_KEY}&units=metric&lang=es`)
     .then(res => res.json())
     .then(data => {
       let pronostico = "No disponible";
 
-      // Buscamos la fecha en el forecast (intervalos de 3 horas)
+      // Buscamos dentro del pronóstico de la API la fecha del partido
       const encontrado = data.list.find(item => item.dt_txt.startsWith(fechaObjetivo));
       
       if (encontrado) {
+        // Si encontramos el pronóstico, mostramos descripción, temperatura e ícono
         const desc = encontrado.weather[0].description;
         const temp = encontrado.main.temp.toFixed(1);
-        const icon = encontrado.weather[0].icon; // icono de clima de OpenWeather
+        const icon = encontrado.weather[0].icon; // Icono de clima
         pronostico = `
           <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}">
           <p>${desc}, ${temp}°C</p>
         `;
       }
 
+      // Insertamos el pronóstico dentro del div correspondiente
       climaDiv.innerHTML = pronostico;
     })
     .catch(err => {
