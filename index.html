@@ -76,18 +76,37 @@
 
 
     <!-- FIN HEADER -->
- <!--------------------INICIO  PROMPT HTML ------------------>
+ <!--------------------INICIO  PROMPT HTML  ------------------>
 
+
+
+<!-- Contenedor principal del carrusel, aquí se muestran todas las imágenes -->
 <div class="carousel-container">
+
+  <!-- Sección del carrusel que agrupa las diferentes diapositivas -->
   <div class="carousel">
+
+    <!-- Una diapositiva del carrusel, con efecto de desvanecido (fade) -->
     <div class="carousel-slide fade">
-  <img src="images/carrusel_img1.png" alt="Imagen 1">
-  <div class="welcome-box">
-    <h2 data-aos="fade-up">¡BIENVENIDO A LA PÁGINA OFICIAL DE SPORTING CRISTAL!</h2>
-    <input type="text" id="nombre" placeholder="Escribe tu nombre">
-    <button onclick="saludar()">Enviar</button>
-  </div>
-</div>
+
+      <!-- Imagen que aparece en esta diapositiva -->
+      <img src="images/carrusel_img1.png" alt="Imagen 1">
+
+      <!-- Caja de bienvenida que se muestra encima de la imagen -->
+      <div class="welcome-box">
+
+        <!-- Título con el mensaje de bienvenida, animado con AOS -->
+        <h2 data-aos="fade-up">¡BIENVENIDO A LA PÁGINA OFICIAL DE SPORTING CRISTAL!</h2>
+
+        <!-- Campo de texto para que el usuario escriba su nombre -->
+        <input type="text" id="nombre" placeholder="Escribe tu nombre">
+
+        <!-- Botón que al hacer clic ejecuta la función saludar() en JavaScript -->
+        <button onclick="saludar()">Enviar</button>
+      </div>
+    </div>
+
+
 <!--------------------FIN  PROMPT HTML ------------------>
 <!--------------------INICIO  CARRUSEL BANER HTML ANDRES ------------------>
 
@@ -118,28 +137,41 @@
 <!--------------------INICIO  PROMPT SCRIPT STEFANO------------------>
 <script>
 function saludar() {
+  // Obtenemos el valor que el usuario escribió en el input con id="nombre"
+  // .trim() elimina los espacios en blanco al inicio y al final
   const nombre = document.getElementById("nombre").value.trim();
   
+  // Verificamos si el usuario escribió algo
   if(nombre){
+    // Si hay un nombre, mostramos un cuadro de diálogo bonito con SweetAlert2
     Swal.fire({
-      title: `¡Bienvenida/o ${nombre}!`,
-      text: "Gracias por visitar la página de Sporting Cristal 💎⚽",
-      icon: "success",
-      confirmButtonText: "Vamos al sitio",
-      confirmButtonColor: "rgb(0, 191, 255)" 
-      
+      title: `¡Bienvenida/o ${nombre}!`, // título personalizado con el nombre
+      text: "Gracias por visitar la página de Sporting Cristal 💎⚽", // mensaje adicional
+      icon: "success", // ícono de éxito (verde)
+      confirmButtonText: "Vamos al sitio", // texto del botón
+      confirmButtonColor: "rgb(0, 191, 255)" // color del botón (celeste, como Cristal)
     });
   } else {
+    // Si el usuario no escribió nada, mostramos una advertencia
     Swal.fire({
-      title: "Ups...",
-      text: "Por favor escribe tu nombre 😉",
-      icon: "warning",
-      confirmButtonText: "Entendido", 
-      confirmButtonColor: "rgb(0,191,255)" 
+      title: "Ups...", // título de alerta
+      text: "Por favor escribe tu nombre 😉", // mensaje de aviso
+      icon: "warning", // ícono de advertencia (amarillo)
+      confirmButtonText: "Entendido", // texto del botón
+      confirmButtonColor: "rgb(0,191,255)" // color del botón
     });
   }
 }
 </script>
+
+
+<!--“En resumen, este código combina HTML, CSS y JavaScript para crear una sección 
+interactiva dentro de la página de Sporting Cristal, donde el usuario no solo ve una 
+imagen en un carrusel, sino que también puede interactuar dejando su nombre y
+recibiendo un saludo.”-->
+
+
+
 <!--------------------FIN  PROMPT SCRIPT ------------------>
 
 
