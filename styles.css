@@ -1130,7 +1130,7 @@ footer p{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px; /* espacio entre productos */
     text-align: center;
-    width: 90%;
+    width: 60%;
     margin: auto;
 }
 .caja10>div{
